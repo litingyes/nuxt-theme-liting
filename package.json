@@ -1,0 +1,65 @@
+{
+  "name": "nuxt-theme-liting",
+  "type": "module",
+  "version": "0.0.0",
+  "private": false,
+  "description": "a theme about nuxt",
+  "author": "liting-yes <luz.liting@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "theme",
+    "nuxt",
+    "blog",
+    "vue"
+  ],
+  "main": "./nuxt.config.ts",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "scripts": {
+    "dev": "nuxi prepare & nuxi dev .playground",
+    "build": "nuxi build .playground",
+    "generate": "nuxi generate .playground",
+    "preview": "nuxi preview .playground",
+    "commit": "git-cz",
+    "release": "release-it"
+  },
+  "dependencies": {
+    "@nuxt/content": "^2.2.2",
+    "pinceau": "latest"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.34.0",
+    "@commitlint/cli": "^17.3.0",
+    "@commitlint/config-conventional": "^17.3.0",
+    "@commitlint/cz-commitlint": "^17.3.0",
+    "@nuxtjs/eslint-config-typescript": "^12.0.0",
+    "@release-it/conventional-changelog": "^5.1.1",
+    "commitizen": "^4.2.6",
+    "eslint": "^8.27.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.2",
+    "inquirer": "8",
+    "lint-staged": "^13.1.0",
+    "nuxt": "^3.0.0",
+    "prettier": "^2.8.1",
+    "release-it": "^15.6.0",
+    "typescript": "^4.9.3"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/cz-commitlint"
+    }
+  },
+  "lint-staged": {
+    "*": "prettier --write --ignore-unknown",
+    "*.{ts,vue,md,json,yaml}": "eslint --fix"
+  }
+}
