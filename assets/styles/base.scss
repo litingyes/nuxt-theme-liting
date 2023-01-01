@@ -14,9 +14,15 @@ body {
 .light-mode {
   background: $slate-50;
   --text-color: #{$slate-900};
+  --nav-bg-color: rgba(255, 255, 255, 0.2);
 }
 
 .dark-mode {
   background: $slate-900;
   --text-color: #{$slate-50};
+  --nav-bg-color: rgba(36, 36, 36, 0.2);
+}
+
+ul {
+  list-style: none;
 }

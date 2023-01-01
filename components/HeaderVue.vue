@@ -2,7 +2,7 @@
  * @Date: 2022-12-31 17:11:30
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-01 17:02:00
+ * @LastEditTime: 2023-01-01 21:58:57
  * @FilePath: /nuxt-theme-liting/components/HeaderVue.vue
 -->
 <script lang="ts" setup>
@@ -13,9 +13,11 @@ const colorMode = useColorMode()
 </script>
 
 <template>
-  <header class="h-16 shadow flex justify-between items-center px-3 font-bold text-2xl">
+  <header
+    class="fixed w-screen h-16 shadow flex justify-between items-center px-3 bg-[var(--nav-bg-color)] backdrop-blur ackdrop-saturate-50"
+  >
     <div>
-      <NuxtLink to="/" class="interact-btn no-underline font-bold">{{ themeConfig.title }}</NuxtLink>
+      <NuxtLink to="/" class="interact-btn no-underline font-bold text-2xl">{{ themeConfig.title }}</NuxtLink>
     </div>
     <div class="px-3 flex justify-end items-center gap-4">
       <NuxtLink v-if="themeConfig.nav?.timeline" to="/timeline" class="interact-btn text-xl no-underline">时间线</NuxtLink>

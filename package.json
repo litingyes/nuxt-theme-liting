@@ -18,6 +18,7 @@
     "registry": "https://registry.npmjs.org"
   },
   "scripts": {
+    "refresh": "nuxi prepare",
     "dev": "nuxi prepare & nuxi dev .playground",
     "build": "nuxi build .playground",
     "generate": "nuxi generate .playground",
@@ -30,6 +31,7 @@
     "@nuxtjs/color-mode": "^3.2.0",
     "@nuxtjs/google-fonts": "3.0.0-1",
     "@unocss/nuxt": "^0.48.0",
+    "nuxt-headlessui": "^1.0.4",
     "sass": "^1.57.1"
   },
   "devDependencies": {
