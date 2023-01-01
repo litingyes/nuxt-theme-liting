@@ -1,25 +1,17 @@
+<!--
+ * @Date: 2022-12-31 14:51:13
+ * @Author: liting luz.liting@gmail.com
+ * @LastEditors: liting luz.liting@gmail.com
+ * @LastEditTime: 2023-01-01 10:46:19
+ * @FilePath: /nuxt-theme-liting/components/AppLayout.vue
+-->
 <script setup lang="ts">
-const myTheme = useAppConfig().myTheme
+// const theme = useAppConfig().theme
 </script>
 
 <template>
-  <div>
-    <header>{{ myTheme.name }}</header>
+  <div class="nuxt-theme-liting">
+    <HeaderVue></HeaderVue>
     <main><slot /></main>
   </div>
 </template>
-
-<style>
-body {
-  margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
-    'Helvetica Neue', sans-serif;
-}
-header {
-  background: #eee;
-  padding: 20px;
-}
-main {
-  padding: 20px;
-}
-</style>

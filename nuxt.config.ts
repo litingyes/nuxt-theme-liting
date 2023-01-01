@@ -2,18 +2,29 @@
  * @Date: 2022-11-21 19:54:30
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2022-12-31 15:38:56
+ * @LastEditTime: 2023-01-01 15:36:12
  * @FilePath: /nuxt-theme-liting/nuxt.config.ts
  */
+import { defineNuxtConfig } from 'nuxt/config'
+import { createResolver } from '@nuxt/kit'
+
+const { resolve } = createResolver(import.meta.url)
+
 export default defineNuxtConfig({
-  modules: ['@nuxt/content', '@unocss/nuxt', '@nuxtjs/color-mode'],
+  css: ['@unocss/reset/normalize.css', resolve('./assets/styles/base.scss')],
+  modules: ['@nuxt/content', '@unocss/nuxt', '@nuxtjs/color-mode', '@nuxtjs/google-fonts'],
   content: {
     documentDriven: true,
   },
   unocss: {
     uno: true,
-    icons: true,
     attributify: true,
+    icons: true,
+    shortcuts: [
+      {
+        'interact-btn': 'cursor-pointer text-slate-900 hover:text-orange-300',
+      },
+    ],
   },
   colorMode: {
     preference: 'system',
@@ -24,5 +35,11 @@ export default defineNuxtConfig({
     classPrefix: '',
     classSuffix: '-mode',
     storageKey: 'nuxt-color-mode',
+  },
+  googleFonts: {
+    families: {
+      Inter: true,
+    },
+    subsets: 'greek',
   },
 })

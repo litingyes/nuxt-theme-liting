@@ -28,13 +28,16 @@
   "dependencies": {
     "@nuxt/content": "^2.2.2",
     "@nuxtjs/color-mode": "^3.2.0",
-    "@unocss/nuxt": "^0.48.0"
+    "@nuxtjs/google-fonts": "3.0.0-1",
+    "@unocss/nuxt": "^0.48.0",
+    "sass": "^1.57.1"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.34.0",
     "@commitlint/cli": "^17.3.0",
     "@commitlint/config-conventional": "^17.3.0",
     "@commitlint/cz-commitlint": "^17.3.0",
+    "@iconify/json": "^2.1.159",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@release-it/conventional-changelog": "^5.1.1",
     "commitizen": "^4.2.6",
@@ -60,7 +63,7 @@
     }
   },
   "lint-staged": {
-    "*": "prettier --write --ignore-unknown",
+    "*.{}": "prettier --write --ignore-unknown",
     "*.{ts,vue,md,json,yaml}": "eslint --fix"
   }
 }
