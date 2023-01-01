@@ -1,3 +1,5 @@
+@import './vars';
+
 *,
 *::before,
 *::after {
@@ -7,4 +9,14 @@
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
+}
+
+.light-mode {
+  background: $slate-50;
+  --text-color: #{$slate-900};
+}
+
+.dark-mode {
+  background: $slate-900;
+  --text-color: #{$slate-50};
 }
