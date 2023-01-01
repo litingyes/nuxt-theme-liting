@@ -6,6 +6,11 @@
   "description": "a theme about nuxt",
   "author": "liting-yes <luz.liting@gmail.com>",
   "license": "MIT",
+  "homepage": "https://nuxt-theme.liting.ink",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/liting-yes/nuxt-theme-liting.git"
+  },
   "keywords": [
     "theme",
     "nuxt",
