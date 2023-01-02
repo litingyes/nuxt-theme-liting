@@ -70,7 +70,7 @@
     }
   },
   "lint-staged": {
-    "*.{}": "prettier --write --ignore-unknown",
+    "*": "prettier --write --ignore-unknown",
     "*.{ts,vue,md,json,yaml}": "eslint --fix"
   }
 }
