@@ -2,11 +2,9 @@
  * @Date: 2023-01-01 13:13:27
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-01 16:42:22
+ * @LastEditTime: 2023-01-03 00:35:02
  * @FilePath: /nuxt-theme-liting/composables/useThemeConfig.ts
  */
-import type { ThemeConfig, ThemeConfigNavIconGithub } from '../utils/types'
-
 export const useThemeConfig = () => {
   const themeConfig = useAppConfig().theme
 

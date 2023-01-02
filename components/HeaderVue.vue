@@ -2,12 +2,10 @@
  * @Date: 2022-12-31 17:11:30
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-01 21:58:57
+ * @LastEditTime: 2023-01-03 00:34:18
  * @FilePath: /nuxt-theme-liting/components/HeaderVue.vue
 -->
 <script lang="ts" setup>
-import { ThemeConfigNavIconGithub } from '../utils/types'
-
 const themeConfig = useThemeConfig()
 const colorMode = useColorMode()
 </script>
