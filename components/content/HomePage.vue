@@ -2,7 +2,7 @@
  * @Date: 2022-12-31 17:11:13
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-02 10:56:36
+ * @LastEditTime: 2023-01-04 01:10:03
  * @FilePath: /nuxt-theme-liting/components/content/HomePage.vue
 -->
 <script lang="ts" setup>
@@ -20,6 +20,7 @@ const props = withDefaults(defineProps<Props>(), {
   avatar: '/avatar.jpg',
   homeCover: '/home-cover.jpg',
   social: () => ({
+    twitter: false,
     blibli: false,
     zhihu: false,
     github: false,
