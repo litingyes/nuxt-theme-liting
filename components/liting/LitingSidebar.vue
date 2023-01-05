@@ -2,7 +2,7 @@
  * @Date: 2023-01-04 20:12:47
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-05 23:03:57
+ * @LastEditTime: 2023-01-05 23:33:28
  * @FilePath: /nuxt-theme-liting/components/liting/LitingSidebar.vue
 -->
 <script lang="ts" setup>
@@ -29,7 +29,7 @@ const handleClick = (key: number | string) => {
 </script>
 
 <template>
-  <ul class="liting-sidebar w-50 min-h-xl list-none px-4">
+  <ul class="liting-sidebar w-50 min-h-xl list-none px-8">
     <template v-if="props.show && themeConfig.sidebar.length">
       <li v-for="level1 in themeConfig.sidebar" :key="level1.key" class="my-4">
         <div class="flex items-center cursor-pointer hover:text-[var(--text-color-hover)]" @click="handleClick(level1.key!)">
