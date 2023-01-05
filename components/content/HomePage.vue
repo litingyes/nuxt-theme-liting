@@ -2,7 +2,7 @@
  * @Date: 2022-12-31 17:11:13
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-04 01:10:03
+ * @LastEditTime: 2023-01-06 01:06:43
  * @FilePath: /nuxt-theme-liting/components/content/HomePage.vue
 -->
 <script lang="ts" setup>
@@ -30,7 +30,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 <template>
   <div
-    class="liting-home h-screen flex flex-col items-center pt-48 bg-cover"
+    class="liting-home h-screen flex flex-col items-center pt-48 bg-cover dark:grayscale"
     :style="{ backgroundImage: `url(${props.homeCover})` }"
   >
     <LitingAvatar :url="props.avatar" size="large" round></LitingAvatar>

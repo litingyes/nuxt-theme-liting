@@ -2,7 +2,7 @@
  * @Date: 2023-01-04 20:12:47
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-05 23:33:28
+ * @LastEditTime: 2023-01-06 01:18:07
  * @FilePath: /nuxt-theme-liting/components/liting/LitingSidebar.vue
 -->
 <script lang="ts" setup>
@@ -19,6 +19,10 @@ const themeConfig = useThemeConfig()
 
 const sidebarState = useSidebarState()
 
+if (themeConfig.value.sidebar?.length && !sidebarState.expanding) {
+  sidebarState.updateExpanding(themeConfig.value.sidebar[0].key)
+}
+
 const handleClick = (key: number | string) => {
   if (sidebarState.expanding === key) {
     sidebarState.updateExpanding()
@@ -32,8 +36,8 @@ const handleClick = (key: number | string) => {
   <ul class="liting-sidebar w-50 min-h-xl list-none px-8">
     <template v-if="props.show && themeConfig.sidebar.length">
       <li v-for="level1 in themeConfig.sidebar" :key="level1.key" class="my-4">
-        <div class="flex items-center cursor-pointer hover:text-[var(--text-color-hover)]" @click="handleClick(level1.key!)">
-          <span class="text-base">{{ level1.text }}</span>
+        <span class="inline-flex items-center interact-btn" @click="handleClick(level1.key!)">
+          <span class="text-base font-bold">{{ level1.text }}</span>
           <div
             :class="
               sidebarState.expanding === level1.key
@@ -41,10 +45,13 @@ const handleClick = (key: number | string) => {
                 : 'i-material-symbols:keyboard-arrow-down-rounded'
             "
           ></div>
-        </div>
-        <ul class="list-none overflow-hidden" :class="sidebarState.expanding !== level1.key ? 'h-0' : ''">
+        </span>
+        <ul
+          class="list-none overflow-hidden transition-all duration-3000 ease-in-out"
+          :class="sidebarState.expanding === level1.key ? 'max-h-fix' : 'max-h-0'"
+        >
           <li v-for="level2 in level1.items" :key="level2.key" class="my-2">
-            <NuxtLink class="text-sm hover:text-[var(--text-color-hover)]" :to="level2.path">{{ level2.text }}</NuxtLink>
+            <NuxtLink class="text-sm font-medium interact-btn" :to="level2.path">{{ level2.text }}</NuxtLink>
           </li>
         </ul>
       </li>

@@ -2,14 +2,14 @@
  * @Date: 2023-01-02 08:59:25
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-05 23:33:54
+ * @LastEditTime: 2023-01-06 00:42:46
  * @FilePath: /nuxt-theme-liting/layouts/default.vue
 -->
 <script lang="ts" setup>
 const { page } = useContent()
 useContentHead(page)
 const sidebar = page.value.sidebar ?? true
-const toc = page.value.toc ?? true
+const toc = page.value?.toc ?? true
 </script>
 
 <template>
@@ -20,6 +20,6 @@ const toc = page.value.toc ?? true
         <ContentRenderer :value="doc" />
       </div>
     </ContentDoc>
-    <LitingToc class="fixed top-16 right-0 pt-12" :show="toc" :toc="page.body.toc"></LitingToc>
+    <LitingToc class="fixed top-16 right-0 pt-12" :show="toc" :toc="page.body?.toc"></LitingToc>
   </div>
 </template>

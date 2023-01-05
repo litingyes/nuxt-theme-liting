@@ -1,3 +1,10 @@
+<!--
+ * @Date: 2023-01-05 23:07:57
+ * @Author: liting luz.liting@gmail.com
+ * @LastEditors: liting luz.liting@gmail.com
+ * @LastEditTime: 2023-01-06 01:07:22
+ * @FilePath: /nuxt-theme-liting/components/content/ProseImg.vue
+-->
 <script setup lang="ts">
 defineProps({
   src: {
@@ -10,15 +17,15 @@ defineProps({
   },
   width: {
     type: [String, Number],
-    default: undefined,
+    default: '100%',
   },
   height: {
     type: [String, Number],
-    default: undefined,
+    default: 'auto',
   },
 })
 </script>
 
 <template>
-  <img :src="src" :alt="alt" :width="width" :height="height" />
+  <img class="dark:grayscale" :src="src" :alt="alt" :width="width" :height="height" />
 </template>

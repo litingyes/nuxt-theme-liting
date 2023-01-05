@@ -13,25 +13,33 @@ body {
   color: var(--text-color);
 }
 
-.light-mode {
-  background: $slate-50;
-  --text-color: #{$slate-900};
-  --text-color-hover: #{$orange-300};
+.light {
+  background: $amber-100;
+  --text-color: #{$slate-800};
+  --text-color-btn: #{$green-700};
+  --text-color-btn-hover: #{$green-900};
   --nav-bg-color: rgba(255, 255, 255, 0.2);
+  --img-handle: 'backdrop-blur-3xl';
 }
 
-.dark-mode {
-  background: $slate-900;
-  --text-color: #{$slate-50};
-  --text-color-hover: #{$slate-400};
+.dark {
+  background: $neutral-900;
+  --text-color: #{$gray-300};
+  --text-color-btn: #{$amber-50};
+  --text-color-btn-hover: #{$amber-100};
   --nav-bg-color: rgba(36, 36, 36, 0.2);
 }
-
-// ul {
-//   list-style: none;
-// }
 
 a {
   text-decoration: none;
   color: var(--text-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 8px 0;
 }

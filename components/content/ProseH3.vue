@@ -2,7 +2,7 @@
  * @Date: 2023-01-05 21:06:29
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-05 22:09:31
+ * @LastEditTime: 2023-01-05 23:47:27
  * @FilePath: /nuxt-theme-liting/components/content/ProseH3.vue
 -->
 <script setup lang="ts">
@@ -14,7 +14,7 @@ const generate = anchorLinks?.depth >= heading && !anchorLinks?.exclude.includes
 </script>
 
 <template>
-  <h3 :id="id" class="text-3xl">
+  <h3 :id="id" class="text-xl font-bold">
     <a v-if="generate" :href="`#${id}`">
       <slot />
     </a>
