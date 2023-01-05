@@ -108,5 +108,8 @@
         "no-unused-vars": "off"
       }
     }
-  ]
+  ],
+  "rules": {
+    "antfu/if-newline": "off"
+  }
 }
