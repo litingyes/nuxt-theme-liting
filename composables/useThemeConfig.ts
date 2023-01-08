@@ -2,7 +2,7 @@
  * @Date: 2023-01-01 13:13:27
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-04 23:52:44
+ * @LastEditTime: 2023-01-08 23:45:40
  * @FilePath: /nuxt-theme-liting/composables/useThemeConfig.ts
  */
 export const useThemeConfig = () => {
@@ -36,6 +36,10 @@ export const useThemeConfig = () => {
         if (!level2.key) keyIndex++
       })
     })
+
+    if (config.lastUpdateTime === true) {
+      config.lastUpdateTime = '最近更新时间'
+    }
 
     return config
   })

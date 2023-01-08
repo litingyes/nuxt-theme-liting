@@ -3,9 +3,10 @@ import { ThemeConfig } from '@nuxt/schema';
  * @Date: 2022-11-21 19:54:30
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-04 22:12:42
+ * @LastEditTime: 2023-01-08 21:50:45
  * @FilePath: /nuxt-theme-liting/app.config.ts
  */
+
 export default defineAppConfig({
   theme: {
     title: 'Nuxt Theme Liting',
@@ -48,6 +49,7 @@ export default defineAppConfig({
         ],
       },
     ],
+    lastUpdateTime: '最近更新时间',
   },
 })
 

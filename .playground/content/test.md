@@ -135,7 +135,6 @@ Right aligned columns
 | engine | engine to be used for processing templates. Handlebars is the default. |
 | ext    | extension to be used for dest files. |
 
-
 ## Links
 
 [link text](http://dev.nodeca.com)
@@ -143,7 +142,6 @@ Right aligned columns
 [link with title](http://nodeca.github.io/pica/demo/ "title text!")
 
 Autoconverted link https://github.com/nodeca/pica (enable linkify to see)
-
 
 ## Images
 
@@ -153,6 +151,8 @@ Autoconverted link https://github.com/nodeca/pica (enable linkify to see)
 Like links, Images also have a footnote style syntax
 
 ![Alt text][id]
+
+
 
 With a reference later in the document defining the URL location:
 

@@ -39,4 +39,5 @@ interface ThemeConfig {
   search: boolean
   nav: Partial<ThemeConfigNav>
   sidebar: Sidebar[]
+  lastUpdateTime: string | boolean
 }
