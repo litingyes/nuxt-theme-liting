@@ -11,19 +11,19 @@
 body {
   font-family: 'Inter', sans-serif;
   color: var(--text-color);
+  background: var(--bg-color);
 }
 
 .light {
-  background: $amber-100;
+  --bg-color: #{$yellow-100};
   --text-color: #{$slate-800};
   --text-color-btn: #{$green-700};
   --text-color-btn-hover: #{$green-900};
   --nav-bg-color: rgba(255, 255, 255, 0.2);
-  --img-handle: 'backdrop-blur-3xl';
 }
 
 .dark {
-  background: $neutral-900;
+  --bg-color: #{$slate-800};
   --text-color: #{$gray-300};
   --text-color-btn: #{$amber-50};
   --text-color-btn-hover: #{$amber-100};
