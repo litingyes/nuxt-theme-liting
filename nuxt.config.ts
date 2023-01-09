@@ -2,7 +2,7 @@
  * @Date: 2022-11-21 19:54:30
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-06 01:09:47
+ * @LastEditTime: 2023-01-09 21:35:58
  * @FilePath: /nuxt-theme-liting/nuxt.config.ts
  */
 import { defineNuxtConfig } from 'nuxt/config'
@@ -35,8 +35,7 @@ export default defineNuxtConfig({
     },
     shortcuts: [
       {
-        'interact-btn':
-          'cursor-pointer text-[var(--text-color-btn)] transition-all hover:text-[var(--text-color-btn-hover)] hover:scale-101',
+        'interact-btn': 'cursor-pointer hover:text-[var(--text-color-btn-hover)]',
       },
     ],
   },

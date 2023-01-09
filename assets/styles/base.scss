@@ -16,16 +16,14 @@ body {
 
 .light {
   --bg-color: #{$yellow-100};
-  --text-color: #{$slate-800};
-  --text-color-btn: #{$green-700};
-  --text-color-btn-hover: #{$green-900};
+  --text-color: #{$slate-700};
+  --text-color-btn-hover: #{$slate-900};
 }
 
 .dark {
   --bg-color: #{$slate-800};
   --text-color: #{$gray-300};
-  --text-color-btn: #{$amber-50};
-  --text-color-btn-hover: #{$amber-100};
+  --text-color-btn-hover: #{$stone-50};
 }
 
 a {
