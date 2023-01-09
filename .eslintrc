@@ -114,7 +114,7 @@
     "vue/multi-word-component-names": [
       "error",
       {
-        "ignores": ["Avatar", "Header", "Sidebar", "Toc"]
+        "ignores": ["Toc", "default", "home", "Avatar", "Header", "Sidebar"]
       }
     ]
   }
