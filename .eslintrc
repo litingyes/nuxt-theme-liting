@@ -110,6 +110,12 @@
     }
   ],
   "rules": {
-    "antfu/if-newline": "off"
+    "antfu/if-newline": "off",
+    "vue/multi-word-component-names": [
+      "error",
+      {
+        "ignores": ["Avatar", "Header", "Sidebar", "Toc"]
+      }
+    ]
   }
 }

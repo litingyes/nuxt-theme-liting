@@ -2,8 +2,8 @@
  * @Date: 2023-01-04 20:12:47
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-06 01:18:07
- * @FilePath: /nuxt-theme-liting/components/liting/LitingSidebar.vue
+ * @LastEditTime: 2023-01-09 21:54:40
+ * @FilePath: /nuxt-theme-liting/components/liting/Sidebar.vue
 -->
 <script lang="ts" setup>
 import { useSidebarState } from '~~/../stores/useSidebarState'

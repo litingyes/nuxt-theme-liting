@@ -2,8 +2,8 @@
  * @Date: 2023-01-04 23:05:03
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-06 01:08:56
- * @FilePath: /nuxt-theme-liting/components/liting/LitingToc.vue
+ * @LastEditTime: 2023-01-09 21:54:45
+ * @FilePath: /nuxt-theme-liting/components/liting/Toc.vue
 -->
 <script lang="ts" setup>
 import type { Toc } from '@nuxt/content/dist/runtime/types'

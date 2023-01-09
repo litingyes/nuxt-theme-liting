@@ -2,8 +2,8 @@
  * @Date: 2022-12-31 17:11:13
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-06 01:06:43
- * @FilePath: /nuxt-theme-liting/components/content/HomePage.vue
+ * @LastEditTime: 2023-01-09 21:54:33
+ * @FilePath: /nuxt-theme-liting/components/liting/Home.vue
 -->
 <script lang="ts" setup>
 interface Props {

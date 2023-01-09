@@ -3,7 +3,7 @@
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
  * @LastEditTime: 2023-01-01 21:03:03
- * @FilePath: /nuxt-theme-liting/components/liting/LitingAvatar.vue
+ * @FilePath: /nuxt-theme-liting/components/liting/Avatar.vue
 -->
 <script lang="ts" setup>
 interface Props {
