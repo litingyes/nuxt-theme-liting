@@ -3,7 +3,7 @@ import { ThemeConfig } from '@nuxt/schema';
  * @Date: 2022-11-21 19:54:30
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-08 21:50:45
+ * @LastEditTime: 2023-01-11 01:15:04
  * @FilePath: /nuxt-theme-liting/app.config.ts
  */
 
@@ -32,6 +32,10 @@ export default defineAppConfig({
           {
             text: '主题介绍',
             path: '/start/instro',
+          },
+          {
+            text: '主题配置',
+            path: '/start/config',
           },
         ],
       },
