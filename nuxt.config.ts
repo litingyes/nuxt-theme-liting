@@ -2,7 +2,7 @@
  * @Date: 2022-11-21 19:54:30
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-09 21:35:58
+ * @LastEditTime: 2023-01-11 00:32:54
  * @FilePath: /nuxt-theme-liting/nuxt.config.ts
  */
 import { defineNuxtConfig } from 'nuxt/config'
@@ -14,7 +14,9 @@ export default defineNuxtConfig({
   css: ['@unocss/reset/normalize.css', resolve('./assets/styles/base.scss')],
   modules: ['@nuxt/content', '@unocss/nuxt', '@nuxtjs/color-mode', '@nuxtjs/google-fonts', 'nuxt-headlessui', '@pinia/nuxt'],
   content: {
-    documentDriven: true,
+    documentDriven: {
+      navigation: false,
+    },
     highlight: {
       theme: {
         default: 'vitesse-light',
