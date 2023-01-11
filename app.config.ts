@@ -3,7 +3,7 @@ import { ThemeConfig } from '@nuxt/schema';
  * @Date: 2022-11-21 19:54:30
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-11 22:12:54
+ * @LastEditTime: 2023-01-11 22:30:20
  * @FilePath: /nuxt-theme-liting/app.config.ts
  */
 
@@ -45,14 +45,9 @@ export default defineAppConfig({
             text: 'Git使用指南',
             path: '/start/git',
           },
-        ],
-      },
-      {
-        text: '部署',
-        items: [
           {
-            text: 'Netfify部署指南',
-            path: '/deploy/netlify',
+            text: '站点部署指南',
+            path: '/start/deploy',
           },
         ],
       },
