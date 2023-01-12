@@ -2,7 +2,7 @@
  * @Date: 2023-01-02 08:59:25
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-09 20:31:04
+ * @LastEditTime: 2023-01-13 01:27:00
  * @FilePath: /nuxt-theme-liting/layouts/default.vue
 -->
 <script lang="ts" setup>
@@ -17,7 +17,7 @@ const toc = page.value?.toc ?? true
 <template>
   <div class="default-layout pt-20 px-6">
     <main>
-      <LitingSidebar class="fixed top-16 left-0 pt-8" :show="sidebar"></LitingSidebar>
+      <LitingSidebar class="fixed top-16 left-6 pt-8" :show="sidebar"></LitingSidebar>
       <ContentDoc v-slot="{ doc }">
         <div class="default-layout__content mx-50 p-4">
           <ContentRenderer :value="doc" />
