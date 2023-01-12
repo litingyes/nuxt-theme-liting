@@ -2,7 +2,7 @@
  * @Date: 2023-01-03 00:33:34
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-04 23:50:40
+ * @LastEditTime: 2023-01-13 00:17:56
  * @FilePath: /nuxt-theme-liting/liting.d.ts
  */
 interface ThemeConfigNavIconGithub {
@@ -28,7 +28,7 @@ interface SidebarItem {
 }
 
 interface Sidebar {
-  key?: number | string
+  key?: string
   text: string
   items: SidebarItem[]
 }

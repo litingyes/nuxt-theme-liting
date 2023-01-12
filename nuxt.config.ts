@@ -37,7 +37,7 @@ export default defineNuxtConfig({
     },
     shortcuts: [
       {
-        'interact-btn': 'cursor-pointer hover:text-[var(--text-color-btn-hover)]',
+        'interact-btn': 'cursor-pointer hover:text-[var(--active-color)]',
       },
     ],
   },

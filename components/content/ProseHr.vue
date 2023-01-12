@@ -6,5 +6,5 @@
  * @FilePath: /nuxt-theme-liting/components/content/ProseHr.vue
 -->
 <template>
-  <hr class="border-[var(--text-color-btn-hover)]" />
+  <hr class="border-[var(--active-color)]" />
 </template>

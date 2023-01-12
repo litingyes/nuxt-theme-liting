@@ -2,7 +2,7 @@
  * @Date: 2023-01-01 13:13:27
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-08 23:45:40
+ * @LastEditTime: 2023-01-13 00:17:28
  * @FilePath: /nuxt-theme-liting/composables/useThemeConfig.ts
  */
 export const useThemeConfig = () => {
@@ -30,10 +30,10 @@ export const useThemeConfig = () => {
     config.nav!.icon!.github as ThemeConfigNavIconGithub
 
     config.sidebar.forEach((level1) => {
-      if (!level1.key) level1.key = keyIndex++
+      if (!level1.key) level1.key = String(keyIndex++)
 
       level1.items.forEach((level2) => {
-        if (!level2.key) keyIndex++
+        if (!level2.key) String(keyIndex++)
       })
     })
 

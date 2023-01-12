@@ -18,13 +18,13 @@ body {
 .light {
   --bg-color: #{$yellow-100};
   --text-color: #{$slate-700};
-  --text-color-btn-hover: #{$slate-900};
+  --active-color: #{$slate-900};
 }
 
 .dark {
   --bg-color: #{$slate-800};
   --text-color: #{$gray-300};
-  --text-color-btn-hover: #{$stone-50};
+  --active-color: #{$stone-50};
 }
 
 a {
