@@ -1,6 +1,6 @@
 {
   "root": true,
-  "extends": ["@antfu", "@nuxtjs/eslint-config-typescript", "plugin:prettier/recommended"],
+  "extends": ["@nuxtjs/eslint-config-typescript", "@antfu", "plugin:prettier/recommended"],
   "overrides": [
     {
       "files": ["*.json", "*.json5"],
@@ -115,6 +115,12 @@
       "error",
       {
         "ignores": ["Toc", "default", "home", "Avatar", "Header", "Sidebar"]
+      }
+    ],
+    "vue/component-tags-order": [
+      "error",
+      {
+        "order": ["script", "template", "style"]
       }
     ]
   }

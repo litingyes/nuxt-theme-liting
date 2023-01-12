@@ -29,7 +29,8 @@
     "generate": "nuxi generate .playground",
     "preview": "nuxi preview .playground",
     "commit": "git-cz",
-    "release": "release-it"
+    "release": "release-it",
+    "format": "eslint --fix ."
   },
   "dependencies": {
     "@nuxt/content": "^2.2.2",
