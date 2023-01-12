@@ -2,7 +2,7 @@
  * @Date: 2022-11-21 19:54:30
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-11 00:32:54
+ * @LastEditTime: 2023-01-12 23:16:17
  * @FilePath: /nuxt-theme-liting/nuxt.config.ts
  */
 import { defineNuxtConfig } from 'nuxt/config'
@@ -56,9 +56,6 @@ export default defineNuxtConfig({
       Inter: true,
     },
     subsets: 'greek',
-  },
-  headlessui: {
-    prefix: 'Headless',
   },
   pinia: {
     autoImports: ['defineStore'],

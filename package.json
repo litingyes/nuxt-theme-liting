@@ -39,7 +39,6 @@
     "@pinia/nuxt": "^0.4.6",
     "@unocss/nuxt": "^0.48.0",
     "execa": "^6.1.0",
-    "nuxt-headlessui": "^1.0.4",
     "sass": "^1.57.1"
   },
   "devDependencies": {

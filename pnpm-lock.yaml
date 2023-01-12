@@ -22,7 +22,6 @@ specifiers:
   inquirer: '8'
   lint-staged: ^13.1.0
   nuxt: ^3.0.0
-  nuxt-headlessui: ^1.0.4
   prettier: ^2.8.1
   release-it: ^15.6.0
   sass: ^1.57.1
@@ -35,7 +34,6 @@ dependencies:
   '@pinia/nuxt': 0.4.6_x2lopl6dvitdigtxz72gjjdrx4
   '@unocss/nuxt': 0.48.0_cggtkagrlotyt7qszvjrmtblfy
   execa: 6.1.0
-  nuxt-headlessui: 1.0.4_rollup@2.79.1+vue@3.2.45
   sass: 1.57.1
 
 devDependencies:
@@ -698,15 +696,6 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
-
-  /@headlessui/vue/1.7.7_vue@3.2.45:
-    resolution: { integrity: sha512-dkdNhJkxyT9rXW5fHx/MkKaM3U13P3duYuwoGTRmDGjE7xAsvcWOSJRJpw1AmCQTvjZF44bh2wSlySLaHW+WuQ== }
-    engines: { node: '>=10' }
-    peerDependencies:
-      vue: ^3.2.0
-    dependencies:
-      vue: 3.2.45
-    dev: false
 
   /@humanwhocodes/config-array/0.11.7:
     resolution: { integrity: sha512-kBbPWzN8oVMLb0hOUYXhmxggL/1cJE6ydvjDIGi9EnAGUyA7cLVKQg+d/Dsm+KZwx2czGHrCmMVLiyg8s5JPKw== }
@@ -7790,18 +7779,6 @@ packages:
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
-
-  /nuxt-headlessui/1.0.4_rollup@2.79.1+vue@3.2.45:
-    resolution: { integrity: sha512-DvmfZqDInDyvBnldf54XIShZVOmKA7SFtIxWQNOORwghDijQxqxkDLw+2BCw/otXf/xE815/7su895edeVsSeA== }
-    dependencies:
-      '@headlessui/vue': 1.7.7_vue@3.2.45
-      '@nuxt/kit': 3.0.0_rollup@2.79.1
-      pathe: 1.0.0
-    transitivePeerDependencies:
-      - rollup
-      - supports-color
-      - vue
-    dev: false
 
   /nuxt/3.0.0_q7bhcmpmfnlgkqdycc3apy3gvq:
     resolution: { integrity: sha512-RNlD78uv04ZiXWmlx9f1tnJfrqsYAWHU+4gbgOTQpIBmQzHWPWiox+fm/1m93iKfEd5sJi9TJUoXX5yBObVZYw== }
