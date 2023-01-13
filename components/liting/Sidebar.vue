@@ -2,12 +2,10 @@
  * @Date: 2023-01-04 20:12:47
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-13 00:24:14
+ * @LastEditTime: 2023-01-14 00:39:35
  * @FilePath: /nuxt-theme-liting/components/liting/Sidebar.vue
 -->
 <script lang="ts" setup>
-import { useSidebarState } from '~~/../stores/useSidebarState'
-
 interface Props {
   show?: boolean
 }
