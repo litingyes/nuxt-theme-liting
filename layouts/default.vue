@@ -22,9 +22,9 @@ const toc = page.value?.toc ?? true
         <div class="default-layout__content mx-50 p-4">
           <ContentRenderer :value="doc" />
           <div class="my-4 flex justify-end">
-            <div v-if="themeConfig.lastUpdateTime && page.$unixCommitter"
+            <div v-if="themeConfig.lastUpdateTime && page.unixCommitter"
               >{{ themeConfig.lastUpdateTime.text }} :
-              {{ format(page.$unixCommitter * 1000, themeConfig.lastUpdateTime.format as string) }}</div
+              {{ format(page.unixCommitter * 1000, themeConfig.lastUpdateTime.format as string) }}</div
             >
           </div>
         </div>
