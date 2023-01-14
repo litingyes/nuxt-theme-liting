@@ -15,6 +15,7 @@ specifiers:
   '@release-it/conventional-changelog': ^5.1.1
   '@unocss/nuxt': ^0.48.0
   commitizen: ^4.2.6
+  date-fns: ^2.29.3
   eslint: ^8.27.0
   eslint-config-prettier: ^8.5.0
   eslint-plugin-prettier: ^4.2.1
@@ -35,6 +36,7 @@ dependencies:
   '@nuxtjs/google-fonts': 3.0.0-1_rollup@2.79.1
   '@pinia/nuxt': 0.4.6_x2lopl6dvitdigtxz72gjjdrx4
   '@unocss/nuxt': 0.48.0_cggtkagrlotyt7qszvjrmtblfy
+  date-fns: 2.29.3
   execa: 6.1.0
   sass: 1.57.1
 
@@ -3588,6 +3590,11 @@ packages:
     resolution: { integrity: sha512-Vr3mLBA8qWmcuschSLAOogKgQ/Jwxulv3RNE4FXnYWRGujzrRWQI4m12fQqRkwX06C0KanhLr4hK+GydchZsaA== }
     engines: { node: '>= 12' }
     dev: true
+
+  /date-fns/2.29.3:
+    resolution: { integrity: sha512-dDCnyH2WnnKusqvZZ6+jA1O51Ibt8ZMRNkDZdyAyK4YfbDwa/cEmuztzG5pk6hqlp9aSBPYcjOlktquahGwGeA== }
+    engines: { node: '>=0.11' }
+    dev: false
 
   /dateformat/3.0.3:
     resolution: { integrity: sha512-jyCETtSl3VMZMWeRo7iY1FL19ges1t55hMo5yaam4Jrsm5EPL89UQkoQRyiI+Yf4k8r2ZpdngkV8hr1lIdjb3Q== }

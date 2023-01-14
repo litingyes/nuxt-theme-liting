@@ -2,7 +2,7 @@
  * @Date: 2023-01-03 00:33:34
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-13 00:17:56
+ * @LastEditTime: 2023-01-14 01:14:55
  * @FilePath: /nuxt-theme-liting/liting.d.ts
  */
 interface ThemeConfigNavIconGithub {
@@ -33,11 +33,16 @@ interface Sidebar {
   items: SidebarItem[]
 }
 
+interface LastUpdateTime {
+  text: string
+  format: string
+}
+
 interface ThemeConfig {
   title: string
   description: string
   search: boolean
   nav: Partial<ThemeConfigNav>
   sidebar: Sidebar[]
-  lastUpdateTime: string | boolean
+  lastUpdateTime: Partial<LastUpdateTime> | false
 }

@@ -3,7 +3,7 @@ import { ThemeConfig } from '@nuxt/schema';
  * @Date: 2022-11-21 19:54:30
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-11 22:30:20
+ * @LastEditTime: 2023-01-14 01:13:24
  * @FilePath: /nuxt-theme-liting/app.config.ts
  */
 
@@ -52,7 +52,10 @@ export default defineAppConfig({
         ],
       },
     ],
-    lastUpdateTime: '最近更新时间',
+    lastUpdateTime: {
+      text: '最近更新时间',
+      format: 'yyyy-MM-dd hh:mm',
+    },
   },
 })
 

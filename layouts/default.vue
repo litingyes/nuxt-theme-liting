@@ -2,7 +2,7 @@
  * @Date: 2023-01-02 08:59:25
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-13 01:27:00
+ * @LastEditTime: 2023-01-14 11:30:10
  * @FilePath: /nuxt-theme-liting/layouts/default.vue
 -->
 <script lang="ts" setup>
@@ -22,8 +22,9 @@ const toc = page.value?.toc ?? true
         <div class="default-layout__content mx-50 p-4">
           <ContentRenderer :value="doc" />
           <div class="my-4 flex justify-end">
-            <div v-if="themeConfig.lastUpdateTime && page.$lastUpdateTime"
-              >{{ themeConfig.lastUpdateTime }}: {{ page.$lastUpdateTime }}</div
+            <div v-if="themeConfig.lastUpdateTime"
+              >{{ themeConfig.lastUpdateTime.text }} :
+              {{ format(page.$unixCommitter * 1000, themeConfig.lastUpdateTime.format as string) }}</div
             >
           </div>
         </div>
