@@ -2,7 +2,7 @@
  * @Date: 2023-01-02 10:01:12
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-15 01:08:33
+ * @LastEditTime: 2023-01-15 01:15:52
  * @FilePath: /nuxt-theme-liting/layouts/home.vue
 -->
 
@@ -32,5 +32,6 @@ const { page } = useContent()
         </NuxtLink>
       </div>
     </div>
+    <PageList :limit="6"></PageList>
   </div>
 </template>
