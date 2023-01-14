@@ -2,7 +2,7 @@
  * @Date: 2023-01-02 10:01:12
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-15 01:15:52
+ * @LastEditTime: 2023-01-15 01:19:12
  * @FilePath: /nuxt-theme-liting/layouts/home.vue
 -->
 
@@ -11,7 +11,7 @@ const { page } = useContent()
 </script>
 
 <template>
-  <div class="home-layout">
+  <div class="home-layout pb-4">
     <div
       class="h-screen flex flex-col items-center pt-48 bg-cover dark:grayscale"
       :style="{ backgroundImage: `url(${page.cover})` }"
