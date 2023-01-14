@@ -2,7 +2,7 @@
  * @Date: 2023-01-04 20:12:47
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-14 00:39:35
+ * @LastEditTime: 2023-01-14 11:43:37
  * @FilePath: /nuxt-theme-liting/components/liting/Sidebar.vue
 -->
 <script lang="ts" setup>
@@ -32,22 +32,25 @@ const closeSubMenu = () => {
 
 <template>
   <div class="liting-sidebar w-50 select-none">
-    <ElMenu
-      class="!border-r-0"
-      :default-openeds="[sidebarState.expanding as string]"
-      unique-opened
-      @open="openSubMenu"
-      @close="closeSubMenu"
-    >
-      <ElSubMenu v-for="level1 in themeConfig.sidebar" :key="level1.key" :index="(level1.key as string)">
-        <template #title>
-          {{ level1.text }}
-        </template>
-        <ElMenuItem v-for="level2 in level1.items" :key="level2.key" class="my-2">
-          <NuxtLink class="text-sm font-medium interact-btn" :to="level2.path">{{ level2.text }}</NuxtLink>
-        </ElMenuItem>
-      </ElSubMenu>
-    </ElMenu>
+    <ClientOnly>
+      <ElMenu
+        class="!border-r-0"
+        :default-openeds="[sidebarState.expanding as string]"
+        unique-opened
+        router
+        @open="openSubMenu"
+        @close="closeSubMenu"
+      >
+        <ElSubMenu v-for="level1 in themeConfig.sidebar" :key="level1.key" :index="(level1.key as string)">
+          <template #title>
+            {{ level1.text }}
+          </template>
+          <ElMenuItem v-for="level2 in level1.items" :key="level2.key" class="my-2" :index="level2.path">
+            {{ level2.text }}
+          </ElMenuItem>
+        </ElSubMenu>
+      </ElMenu>
+    </ClientOnly>
   </div>
 </template>
 
