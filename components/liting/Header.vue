@@ -2,7 +2,7 @@
  * @Date: 2022-12-31 17:11:30
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-16 00:18:27
+ * @LastEditTime: 2023-01-16 00:20:09
  * @FilePath: /nuxt-theme-liting/components/liting/Header.vue
 -->
 <script lang="ts" setup>
@@ -41,8 +41,8 @@ const colorMode = useColorMode()
       </template>
       <div v-if="themeConfig.nav?.icon?.i18n" class="i-ion:language-outline interact-btn text-2xl" />
       <NuxtLink
-        v-if="!(themeConfig.nav?.icon?.github as ThemeConfigNavIconGithub).disabled"
-        :to="(themeConfig.nav?.icon?.github as ThemeConfigNavIconGithub).url"
+        v-if="!(themeConfig.nav?.icon?.github as Theme.NavIconGithub).disabled"
+        :to="(themeConfig.nav?.icon?.github as Theme.NavIconGithub).url"
         target="_blank"
       >
         <div class="i-iconoir:github interact-btn text-2xl" />
