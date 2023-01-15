@@ -2,7 +2,7 @@
  * @Date: 2022-12-31 17:11:30
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-15 23:48:54
+ * @LastEditTime: 2023-01-16 00:18:27
  * @FilePath: /nuxt-theme-liting/components/liting/Header.vue
 -->
 <script lang="ts" setup>
@@ -15,7 +15,7 @@ const colorMode = useColorMode()
     class="liting-header fixed z-10 w-screen h-16 drop-shadow-2xl flex justify-between items-center px-3 backdrop-blur bg-yellow-100/50 dark:bg-slate-800/50"
   >
     <NuxtLink to="/" class="interact-btn no-underline font-bold text-2xl flex items-center gap-1">
-      <img class="w-12 h-12" src="/logo.png" alt="logo" />
+      <img class="w-12 h-12" src="../../public/logo.png" alt="logo" />
       <span>{{ themeConfig.title }}</span>
     </NuxtLink>
     <div class="px-3 flex justify-end items-center gap-4">
