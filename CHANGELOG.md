@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.2.0](https://github.com/liting-yes/nuxt-theme-liting/compare/0.0.1-2...0.2.0) (2023-01-15)
+
+### ⚠ BREAKING CHANGES
+
+- **types:** a type namaspace is necessary
+
+### Features
+
+- extra layout ([7ffe9c0](https://github.com/liting-yes/nuxt-theme-liting/commit/7ffe9c0b46fc66672daa0b437d5e00bc3eccd854))
+- tag layout ([f4877ad](https://github.com/liting-yes/nuxt-theme-liting/commit/f4877ada3b719106b7479e767127cacb99e6050b))
+
+- **types:** declare namespace for theme types
+  ([d732ea8](https://github.com/liting-yes/nuxt-theme-liting/commit/d732ea8c3f613c8c60262eed4132ff455dabb885))
+
 ## [0.0.1-2](https://github.com/liting-yes/nuxt-theme-liting/compare/0.0.1-1...0.0.1-2) (2023-01-14)
 
 ### ⚠ BREAKING CHANGES
