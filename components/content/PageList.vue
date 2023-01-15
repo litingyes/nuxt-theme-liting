@@ -46,7 +46,7 @@ const { lastUpdateTime } = useThemeConfig().value
     v-slot="{ list }"
     :path="props.path"
     :query="{
-      only: ['_path', 'title', 'description', 'unixAuthor', 'unixCommitter'],
+      only: THEME_QUERY_ONLY,
       sort: { unixAuthor: -1 },
       limit: props.limit,
     }"
