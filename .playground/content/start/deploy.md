@@ -1,3 +1,8 @@
+---
+tags:
+  - tutorial
+---
+
 # 部署
 
 ## Netlify 自动部署
