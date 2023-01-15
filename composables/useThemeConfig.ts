@@ -9,7 +9,7 @@ export const useThemeConfig = () => {
   const themeConfig = useAppConfig().theme
 
   return useState('themeConfig', () => {
-    const config: ThemeConfig = Object.assign({}, themeConfig)
+    const config: Theme.Config = Object.assign({}, themeConfig)
     let keyIndex = 0
 
     if (!config.nav?.icon?.github) {
@@ -27,7 +27,7 @@ export const useThemeConfig = () => {
         url: config.nav!.icon!.github as string,
       }
     }
-    config.nav!.icon!.github as ThemeConfigNavIconGithub
+    config.nav!.icon!.github as Theme.NavIconGithub
 
     config.sidebar.forEach((level1) => {
       if (!level1.key) level1.key = String(keyIndex++)
