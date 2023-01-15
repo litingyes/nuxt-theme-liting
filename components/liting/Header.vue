@@ -2,7 +2,7 @@
  * @Date: 2022-12-31 17:11:30
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-09 22:05:00
+ * @LastEditTime: 2023-01-15 19:45:49
  * @FilePath: /nuxt-theme-liting/components/liting/Header.vue
 -->
 <script lang="ts" setup>
@@ -18,7 +18,7 @@ const colorMode = useColorMode()
     <div class="px-3 flex justify-end items-center gap-4">
       <NuxtLink v-if="themeConfig.nav?.timeline" to="/timeline" class="interact-btn text-xl no-underline">时间线</NuxtLink>
       <NuxtLink v-if="themeConfig.nav?.tag" to="/tag" class="interact-btn text-xl no-underline">标签</NuxtLink>
-      <NuxtLink v-if="themeConfig.nav?.expand" to="/expend" class="interact-btn text-xl no-underline">其他</NuxtLink>
+      <NuxtLink v-if="themeConfig.nav?.extra" to="/extra" class="interact-btn text-xl no-underline">其他</NuxtLink>
       <template v-if="themeConfig.nav?.icon?.skin">
         <div
           v-show="colorMode.preference === 'system'"

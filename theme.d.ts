@@ -2,7 +2,7 @@
  * @Date: 2023-01-03 00:33:34
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-15 13:14:46
+ * @LastEditTime: 2023-01-15 19:44:53
  * @FilePath: /nuxt-theme-liting/theme.d.ts
  */
 import { ParsedContent } from '@nuxt/content/dist/runtime/types'
@@ -20,7 +20,7 @@ declare namespace Theme {
   interface Nav {
     timeline: boolean
     tag: boolean
-    expand: boolean
+    extra: boolean
     icon: {
       skin?: boolean
       i18n?: boolean

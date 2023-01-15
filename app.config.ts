@@ -2,7 +2,7 @@
  * @Date: 2022-11-21 19:54:30
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-15 19:42:45
+ * @LastEditTime: 2023-01-15 19:45:24
  * @FilePath: /nuxt-theme-liting/app.config.ts
  */
 export default defineAppConfig({
@@ -13,7 +13,7 @@ export default defineAppConfig({
     nav: {
       timeline: true,
       tag: true,
-      expand: true,
+      extra: true,
       icon: {
         skin: true,
         i18n: false,

@@ -25,7 +25,7 @@ export default defineAppConfig({
     nav: {
       timeline: true,
       tag: true,
-      expand: true,
+      extra: true,
       icon: {
         skin: true,
         i18n: false,
@@ -90,7 +90,7 @@ nav 字段设置的是顶部导航栏功能
 interface ThemeConfigNav {
   timeline: boolean  // 开发中
   tag: boolean  // 开发中
-  expand: boolean  // 开发中
+  extra: boolean  // 开发中
   icon: {  // 快捷图标跳转
     skin?: boolean  // 模式切换
     i18n?: boolean  // 开发中 
