@@ -1,12 +1,10 @@
 /*
-import { ThemeConfig } from '@nuxt/schema';
  * @Date: 2022-11-21 19:54:30
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-14 01:13:24
+ * @LastEditTime: 2023-01-15 19:42:45
  * @FilePath: /nuxt-theme-liting/app.config.ts
  */
-
 export default defineAppConfig({
   theme: {
     title: 'Nuxt Theme Liting',
@@ -61,7 +59,7 @@ export default defineAppConfig({
 
 declare module '@nuxt/schema' {
   interface AppConfigInput {
-    theme?: Partial<ThemeConfig>
+    theme?: Partial<Theme.Config>
   }
 
   interface Test {}
