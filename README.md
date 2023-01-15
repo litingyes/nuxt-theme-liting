@@ -3,3 +3,9 @@
 <h1 align="center">Nuxt Theme Liting</h1>
 
 a theme about nuxt
+
+## install
+
+```sh
+npm i nuxt-theme-liting
+```
