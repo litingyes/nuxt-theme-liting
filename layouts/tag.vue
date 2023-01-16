@@ -2,7 +2,7 @@
  * @Date: 2023-01-15 11:47:08
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-15 17:39:48
+ * @LastEditTime: 2023-01-16 12:21:36
  * @FilePath: /nuxt-theme-liting/layouts/tag.vue
 -->
 <script lang="ts" setup>
@@ -73,6 +73,6 @@ const selectedTag = ref(tags.value[0])
         <span>{{ tag.tag }} {{ tag.total }}</span></li
       >
     </ul>
-    <PageList :list="pagesData[selectedTag].list"></PageList>
+    <LitingPageList :list="pagesData[selectedTag].list"></LitingPageList>
   </div>
 </template>
