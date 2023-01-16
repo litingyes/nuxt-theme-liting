@@ -2,7 +2,7 @@
  * @Date: 2023-01-15 11:47:08
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-16 12:21:36
+ * @LastEditTime: 2023-01-16 12:32:17
  * @FilePath: /nuxt-theme-liting/layouts/tag.vue
 -->
 <script lang="ts" setup>
@@ -61,8 +61,8 @@ const selectedTag = ref(tags.value[0])
 </script>
 
 <template>
-  <div class="tag-layout pt-16">
-    <ul class="w-xl mx-auto mt-16 mb-8 list-none flex items-center gap-2 flex-wrap">
+  <div class="tag-layout pt-16 px-12 sm:px-0">
+    <ul class="max-w-xl mx-auto mt-16 mb-8 list-none flex items-center gap-2 flex-wrap">
       <li
         v-for="tag in pagesData"
         :key="tag.tag"
