@@ -2,7 +2,7 @@
  * @Date: 2023-01-14 22:58:39
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-16 12:20:29
+ * @LastEditTime: 2023-01-16 18:15:09
  * @FilePath: /nuxt-theme-liting/components/liting/PageList.vue
 -->
 <script lang="ts" setup>
@@ -25,11 +25,11 @@ const { lastUpdateTime } = useThemeConfig().value
 </script>
 
 <template>
-  <ul v-if="props.list" class="list-none" v-bind="$attrs">
+  <ul v-if="props.list" class="list-none px-8" v-bind="$attrs">
     <li
       v-for="page in filterList(props.list)"
       :key="page._path"
-      class="my-4 mx-auto w-96 sm:w-xl shadow-md bg-emerald-200 rounded-lg dark:bg-slate-900"
+      class="my-4 mx-auto max-w-xl shadow-md bg-emerald-200 rounded-lg dark:bg-slate-900"
     >
       <NuxtLink class="block px-6 py-4" :to="page._path">
         <h2 class="text-base font-semibold mb-2">{{ page.title ?? '标题为空' }}</h2>
@@ -51,11 +51,11 @@ const { lastUpdateTime } = useThemeConfig().value
       limit: props.limit,
     }"
   >
-    <ul class="list-none" v-bind="$attrs">
+    <ul class="list-none px-8" v-bind="$attrs">
       <li
         v-for="page in filterList(list)"
         :key="page._path"
-        class="my-4 mx-auto w-128 sm:w-xl shadow-md bg-emerald-200 rounded-lg dark:bg-slate-900"
+        class="my-4 mx-auto max-w-xl shadow-md bg-emerald-200 rounded-lg dark:bg-slate-900"
       >
         <NuxtLink class="block px-6 py-4" :to="page._path">
           <h2 class="text-base font-semibold mb-2">{{ page.title ?? '标题为空' }}</h2>
