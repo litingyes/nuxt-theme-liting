@@ -1,5 +1,32 @@
 # Changelog
 
+## [0.3.0](https://github.com/liting-yes/nuxt-theme-liting/compare/0.2.0...0.3.0) (2023-01-16)
+
+### Features
+
+- **extra layout:** support responsive desgin
+  ([1465079](https://github.com/liting-yes/nuxt-theme-liting/commit/1465079a98929ace57a3819540f85ce8b0dcabda))
+- **header:** support responsive design
+  ([7370ba9](https://github.com/liting-yes/nuxt-theme-liting/commit/7370ba9e43315f418d049678265d5b50ea295151))
+- **home layout:** support responsive design
+  ([2bb05f2](https://github.com/liting-yes/nuxt-theme-liting/commit/2bb05f22f179b7fde14c6ceaa19649b66e9a7bc5))
+- **logo:** support config
+  ([27578bf](https://github.com/liting-yes/nuxt-theme-liting/commit/27578bfdaf22974ae8d343cf43e1a2af39f85bd1))
+- **tag layout:** support responsive desgin
+  ([f9d3ec1](https://github.com/liting-yes/nuxt-theme-liting/commit/f9d3ec13943c92317e9010052b6094bd8f0bc7fc))
+
+### Bug Fixes
+
+- **Header:** import logo error
+  ([b4df75b](https://github.com/liting-yes/nuxt-theme-liting/commit/b4df75b0b4b5b37cbe059245fc136bd4cd6a3bf4))
+- **Header:** type error
+  ([c32d304](https://github.com/liting-yes/nuxt-theme-liting/commit/c32d3044f8add314e061e3131a54264db53a39ba))
+- **Header:** vue warn about mismatch
+  ([ca03227](https://github.com/liting-yes/nuxt-theme-liting/commit/ca03227183b37fa2a074ef0e3f40ecbb060ca233))
+- **PageList:** type warn
+  ([75db157](https://github.com/liting-yes/nuxt-theme-liting/commit/75db1571301415df278c1db9916eb99023f65220))
+- responsive ([c49fafe](https://github.com/liting-yes/nuxt-theme-liting/commit/c49fafeac32f05f55b2ff5d2a85d51b3262138e7))
+
 ## [0.2.0](https://github.com/liting-yes/nuxt-theme-liting/compare/0.0.1-2...0.2.0) (2023-01-15)
 
 ### ⚠ BREAKING CHANGES
