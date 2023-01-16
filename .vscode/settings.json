@@ -1,0 +1,29 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "eslint.validate": ["typescript", "vue", "json", "markdown"],
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": false,
+    "source.fixAll.eslint": true
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[svg]": {
+    "editor.defaultFormatter": "jock.svg"
+  },
+  "fileheader.customMade": {
+    "Date": "Do not edit",
+    "Author": "git config user.name && git config user.email",
+    "LastEditors": "git config user.name && git config user.email",
+    "LastEditTime": "Do not edit",
+    "FilePath": "Do not edit"
+  },
+  "fileheader.configObj": {
+    "autoAddLine": 1000,
+    "prohibitAutoAdd": ["json", "md"],
+    "CheckFileChange": true,
+    "createHeader": true,
+    "useWorker": true
+  }
+}
