@@ -2,7 +2,7 @@
  * @Date: 2023-01-03 00:33:34
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-15 19:44:53
+ * @LastEditTime: 2023-01-16 09:30:47
  * @FilePath: /nuxt-theme-liting/theme.d.ts
  */
 import { ParsedContent } from '@nuxt/content/dist/runtime/types'
@@ -48,6 +48,7 @@ declare namespace Theme {
   interface Config {
     title: string
     description: string
+    logo: string
     search: boolean
     nav: Partial<Nav>
     sidebar: Sidebar[]
