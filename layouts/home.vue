@@ -2,7 +2,7 @@
  * @Date: 2023-01-02 10:01:12
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-15 01:19:12
+ * @LastEditTime: 2023-01-16 11:58:07
  * @FilePath: /nuxt-theme-liting/layouts/home.vue
 -->
 
@@ -13,7 +13,7 @@ const { page } = useContent()
 <template>
   <div class="home-layout pb-4">
     <div
-      class="h-screen flex flex-col items-center pt-48 bg-cover dark:grayscale"
+      class="h-96 sm:h-screen flex flex-col items-center pt-36 sm:pt-48 bg-[length:0px_0px] sm:bg-cover dark:grayscale"
       :style="{ backgroundImage: `url(${page.cover})` }"
     >
       <LitingAvatar :url="page.avatar" size="large" round></LitingAvatar>
