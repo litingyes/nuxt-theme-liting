@@ -2,7 +2,7 @@
  * @Date: 2023-01-02 08:59:25
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-17 21:10:57
+ * @LastEditTime: 2023-01-17 22:53:53
  * @FilePath: /nuxt-theme-liting/layouts/default.vue
 -->
 <script lang="ts" setup>
@@ -45,16 +45,21 @@ onClickOutside(tocRef, () => {
         :class="{ block: sidebarVisible }"
         :show="sidebar"
       ></LitingSidebar>
-      <ContentDoc v-slot="{ doc }">
-        <div ref="contentRef" class="default-layout__content mx-0 sm:mx-50 p-4">
-          <ContentRenderer :value="doc" />
-          <div class="my-4 flex justify-end">
-            <div v-if="themeConfig.lastUpdateTime && page.unixCommitter"
-              >{{ themeConfig.lastUpdateTime.text }} :
-              {{ format(page.unixCommitter * 1000, themeConfig.lastUpdateTime.format as string) }}</div
-            >
+      <ContentDoc>
+        <template #default="{ doc }">
+          <div ref="contentRef" class="default-layout__content mx-0 sm:mx-50 p-4">
+            <ContentRenderer :value="doc" />
+            <div class="my-4 flex justify-end">
+              <div v-if="themeConfig.lastUpdateTime && page.unixCommitter"
+                >{{ themeConfig.lastUpdateTime.text }} :
+                {{ format(page.unixCommitter * 1000, themeConfig.lastUpdateTime.format as string) }}</div
+              >
+            </div>
           </div>
-        </div>
+        </template>
+        <template #not-found>
+          <h1 class="default-layout__content--404 mx-0 sm:mx-50 p-4">Document not found</h1>
+        </template>
       </ContentDoc>
       <LitingToc
         ref="tocRef"
