@@ -24,6 +24,7 @@
   },
   "scripts": {
     "refresh": "nuxi prepare",
+    "cleanup": "nuxi cleanup .playground",
     "dev": "nuxi prepare & nuxi dev .playground",
     "build": "nuxi build .playground",
     "generate": "nuxi generate .playground",
