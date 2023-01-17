@@ -23,7 +23,7 @@
     "registry": "https://registry.npmjs.org"
   },
   "scripts": {
-    "refresh": "nuxi prepare",
+    "refresh": "nuxi prepare & nuxi prepare .playground",
     "cleanup": "nuxi cleanup .playground",
     "dev": "nuxi prepare & nuxi dev .playground",
     "build": "nuxi build .playground",
