@@ -2,7 +2,7 @@
  * @Date: 2022-12-31 17:11:30
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-17 10:57:47
+ * @LastEditTime: 2023-01-17 15:47:57
  * @FilePath: /nuxt-theme-liting/components/liting/Header.vue
 -->
 <script lang="ts" setup>
@@ -31,9 +31,15 @@ const menuPopperVisible = ref(false)
       <NuxtLink v-if="themeConfig.nav?.timeline" to="/timeline" class="interact-btn text-xl no-underline">时间线</NuxtLink>
       <NuxtLink v-if="themeConfig.nav?.tag" to="/tag" class="interact-btn text-xl no-underline">标签</NuxtLink>
       <NuxtLink v-if="themeConfig.nav?.extra" to="/extra" class="interact-btn text-xl no-underline">其他</NuxtLink>
-      <ClientOnly v-if="themeConfig.locales">
-        <ElDropdown size="small" trigger="click" popper-class="liting-header__popper" @command="handleClickLocale">
-          <div class="i-ion:language-outline interact-btn text-2xl" />
+      <ClientOnly>
+        <ElDropdown
+          v-if="themeConfig.locales"
+          size="small"
+          trigger="click"
+          popper-class="liting-header__popper"
+          @command="handleClickLocale"
+        >
+          <div class="i-ion:language-outline text-[var(--text-color)] interact-btn text-2xl" />
           <template #dropdown>
             <ElDropdownMenu>
               <ElDropdownItem v-for="locale in themeConfig.locales" :key="locale.prefix" :command="locale.lang">{{
@@ -77,7 +83,7 @@ const menuPopperVisible = ref(false)
           @visible-change="(val) => (menuPopperVisible = val)"
         >
           <div
-            class="bg-[var(--text-color)] text-2xl interact-btn"
+            class="text-[var(--text-color)] text-2xl interact-btn"
             :class="menuPopperVisible ? 'i-mingcute:close-fill' : 'i-mingcute:menu-fill'"
           ></div>
           <template #dropdown>
@@ -92,6 +98,28 @@ const menuPopperVisible = ref(false)
                 <NuxtLink to="/extra" class="interact-btn text-sm no-underline">其他</NuxtLink>
               </el-dropdown-item>
             </el-dropdown-menu>
+          </template>
+        </ElDropdown>
+      </ClientOnly>
+      <ClientOnly>
+        <ElDropdown
+          v-if="themeConfig.locales"
+          size="small"
+          trigger="click"
+          popper-class="liting-header__popper"
+          @command="handleClickLocale"
+        >
+          <div class="i-ion:language-outline text-[var(--text-color)] interact-btn text-2xl" />
+          <template #dropdown>
+            <ElDropdownMenu>
+              <ElDropdownItem
+                v-for="locale in themeConfig.locales"
+                :key="locale.prefix"
+                class="!text-[var(--text-color)] interact-btn text-sm"
+                :command="locale.lang"
+                >{{ locale.text }}</ElDropdownItem
+              >
+            </ElDropdownMenu>
           </template>
         </ElDropdown>
       </ClientOnly>
@@ -127,6 +155,8 @@ const menuPopperVisible = ref(false)
 .liting-header {
   &__popper {
     --el-bg-color-overlay: var(--bg-color);
+    --el-dropdown-menuItem-hover-fill: var(--bg-color);
+    --el-dropdown-menuItem-hover-color: var(--active-color);
 
     .el-popper__arrow {
       display: none;
