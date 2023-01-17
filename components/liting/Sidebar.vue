@@ -2,7 +2,7 @@
  * @Date: 2023-01-04 20:12:47
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-14 11:43:37
+ * @LastEditTime: 2023-01-17 20:35:26
  * @FilePath: /nuxt-theme-liting/components/liting/Sidebar.vue
 -->
 <script lang="ts" setup>
@@ -16,22 +16,19 @@ const props = withDefaults(defineProps<Props>(), {
 const themeConfig = useThemeConfig()
 
 const sidebarState = useSidebarState()
-
 if (themeConfig.value.sidebar?.length && !sidebarState.expanding) {
   sidebarState.updateExpanding(themeConfig.value.sidebar[0].key)
 }
-
 const openSubMenu = (key: string) => {
   sidebarState.updateExpanding(key)
 }
-
 const closeSubMenu = () => {
   sidebarState.updateExpanding()
 }
 </script>
 
 <template>
-  <div class="liting-sidebar w-50 select-none">
+  <div class="liting-sidebar w-50 select-none h-full bg-[var(--bg-color)] shadow-lg">
     <ClientOnly>
       <ElMenu
         class="!border-r-0"
