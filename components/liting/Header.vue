@@ -42,9 +42,13 @@ const menuPopperVisible = ref(false)
           <div class="i-ion:language-outline text-[var(--text-color)] interact-btn text-2xl" />
           <template #dropdown>
             <ElDropdownMenu>
-              <ElDropdownItem v-for="locale in themeConfig.locales" :key="locale.prefix" :command="locale.lang">{{
-                locale.text
-              }}</ElDropdownItem>
+              <ElDropdownItem
+                v-for="locale in themeConfig.locales"
+                :key="locale.prefix"
+                class="!text-[var(--text-color)] interact-btn text-sm"
+                :command="locale.lang"
+                >{{ locale.text }}</ElDropdownItem
+              >
             </ElDropdownMenu>
           </template>
         </ElDropdown>
