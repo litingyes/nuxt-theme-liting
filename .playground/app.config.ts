@@ -2,7 +2,7 @@
  * @Date: 2022-12-31 14:51:13
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-01 10:49:15
+ * @LastEditTime: 2023-01-17 00:34:07
  * @FilePath: /nuxt-theme-liting/.playground/app.config.ts
  */
 export default defineAppConfig({
@@ -54,5 +54,17 @@ export default defineAppConfig({
       text: '最近更新时间',
       format: 'yyyy-MM-dd hh:mm',
     },
+    locales: [
+      {
+        lang: 'en-US',
+        prefix: '/en-US',
+        text: 'English',
+      },
+      {
+        lang: 'zh-CN',
+        prefix: '/zh-CN',
+        text: '简体中文',
+      },
+    ],
   },
 })

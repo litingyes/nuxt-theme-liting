@@ -2,7 +2,7 @@
  * @Date: 2023-01-08 22:04:56
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-14 23:29:08
+ * @LastEditTime: 2023-01-17 15:36:22
  * @FilePath: /nuxt-theme-liting/server/plugins/fileTime.ts
  */
 import path from 'path'

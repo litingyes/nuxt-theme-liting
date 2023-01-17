@@ -2,7 +2,7 @@
  * @Date: 2022-11-21 19:54:30
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-14 00:39:06
+ * @LastEditTime: 2023-01-16 21:44:33
  * @FilePath: /nuxt-theme-liting/nuxt.config.ts
  */
 import { defineNuxtConfig } from 'nuxt/config'
@@ -12,7 +12,15 @@ const { resolve } = createResolver(import.meta.url)
 
 export default defineNuxtConfig({
   css: ['@unocss/reset/normalize.css', resolve('./assets/styles/base.scss')],
-  modules: ['@nuxt/content', '@unocss/nuxt', '@nuxtjs/color-mode', '@nuxtjs/google-fonts', '@pinia/nuxt', '@element-plus/nuxt'],
+  modules: [
+    '@nuxt/content',
+    '@unocss/nuxt',
+    '@nuxtjs/color-mode',
+    '@nuxtjs/google-fonts',
+    '@pinia/nuxt',
+    '@element-plus/nuxt',
+    '@vueuse/nuxt',
+  ],
   content: {
     documentDriven: {
       navigation: false,

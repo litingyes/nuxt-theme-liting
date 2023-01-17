@@ -2,12 +2,14 @@
  * @Date: 2023-01-02 10:01:12
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-16 12:21:21
+ * @LastEditTime: 2023-01-17 15:34:26
  * @FilePath: /nuxt-theme-liting/layouts/home.vue
 -->
 
 <script lang="ts" setup>
 const { page } = useContent()
+
+const { disabled, currentLocale } = useLocale()
 </script>
 
 <template>
@@ -32,6 +34,6 @@ const { page } = useContent()
         </NuxtLink>
       </div>
     </div>
-    <LitingPageList :limit="6"></LitingPageList>
+    <LitingPageList :path="disabled ? '/' : currentLocale?.prefix" :limit="6"></LitingPageList>
   </div>
 </template>

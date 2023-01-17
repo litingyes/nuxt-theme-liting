@@ -2,12 +2,17 @@
  * @Date: 2023-01-15 11:47:08
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-16 18:18:26
+ * @LastEditTime: 2023-01-17 15:27:39
  * @FilePath: /nuxt-theme-liting/layouts/tag.vue
 -->
 <script lang="ts" setup>
-let pages: Array<Partial<Theme.PageInfo>> = await queryContent('/').only(THEME_QUERY_ONLY).sort({ unixAuthor: -1 }).find()
-pages = pages.filter((page) => page.title && page.unixAuthor)
+const { disabled, currentLocale } = useLocale()
+
+let pages: Array<Partial<Theme.PageInfo>> = await queryContent((disabled ? '/' : currentLocale?.value?.prefix) as string)
+  .only(THEME_QUERY_ONLY)
+  .sort({ unixAuthor: -1 })
+  .find()
+pages = pages.filter((page) => page.title)
 
 const tags = computed(() => {
   const tags: string[] = ['all']

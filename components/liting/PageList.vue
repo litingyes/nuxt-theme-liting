@@ -2,7 +2,7 @@
  * @Date: 2023-01-14 22:58:39
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-16 18:15:09
+ * @LastEditTime: 2023-01-17 15:34:16
  * @FilePath: /nuxt-theme-liting/components/liting/PageList.vue
 -->
 <script lang="ts" setup>
@@ -18,7 +18,7 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const filterList = (list: Array<Partial<Theme.PageInfo>>) => {
-  return list.filter((page) => page.title && page.unixAuthor)
+  return list.filter((page) => page.title)
 }
 
 const { lastUpdateTime } = useThemeConfig().value
@@ -62,7 +62,12 @@ const { lastUpdateTime } = useThemeConfig().value
           <p v-if="page.description" class="text-sm my-2">{{ page.description }}</p>
           <div class="text-right my-2 text-xs"
             >{{ (lastUpdateTime as Theme.LastUpdateTime).text }} :
-            {{ format((page.unixCommitter as number) * 1000, (lastUpdateTime as Theme.LastUpdateTime).format as string) }}</div
+            {{
+              format(
+                page.unixCommitter ? (page.unixCommitter as number) * 1000 : Date.now(),
+                (lastUpdateTime as Theme.LastUpdateTime).format as string
+              )
+            }}</div
           >
         </NuxtLink>
       </li>

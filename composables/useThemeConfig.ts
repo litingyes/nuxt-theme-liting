@@ -2,7 +2,7 @@
  * @Date: 2023-01-01 13:13:27
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-14 01:15:52
+ * @LastEditTime: 2023-01-17 15:09:19
  * @FilePath: /nuxt-theme-liting/composables/useThemeConfig.ts
  */
 export const useThemeConfig = () => {
@@ -36,6 +36,13 @@ export const useThemeConfig = () => {
         if (!level2.key) String(keyIndex++)
       })
     })
+
+    if (config.locales && !config.locales.length) {
+      config.locales = false
+    }
+    if (config.locales) {
+      config.locales.forEach((locale) => (locale.prefix = locale.prefix.toLowerCase()))
+    }
 
     return config
   })
