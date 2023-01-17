@@ -2,12 +2,12 @@
 layout: extra
 extra:
   - 
-    text: 前端
+    text: Front End
     items:
       - text: MDN
-        desc: 前端基础文档
+        desc: front end basic document
         link: https://developer.mozilla.org/zh-CN/
       - text : Nuxt
-        desc: 基于Vue.js的全栈框架
+        desc: the intuitive web framework
         link: https://nuxt.com/
 ---

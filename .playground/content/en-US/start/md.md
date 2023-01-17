@@ -1,56 +1,56 @@
-#  文本编辑
+#  Text Editor
 
-## 注意事项
+## Precautions
 
-- 本主题所有文档内容都是遵循最基础的**MarkDown**语法编辑的，当然，会有一个简单的**MDC**语法拓展
+- all documents in this topic are edited according to the most basic **MarkDown** grammar, of course, there will be a simple **MDC** grammar extension
 
-## MarkDown基础语法
+## MarkDown Basic Grammar
 
-### 标题
+### Title
 
-用 __#__ 来标记标题
-
-```md
-# 一级标题
-## 二级标题
-### 三级标题
-#### 四级标题
-##### 五级标题
-###### 六级标题
-```
-
-### 斜体
-
-用一对 **\*** 或 **\_** 来包裹目标文本
+mark the title with __#__
 
 ```md
-*斜体*
-_斜体_
+# Level 1 Heading
+## Level 2 Heading
+### Level 3 Heading
+#### Level 4 Heading
+##### Level 5 Heading
+###### Level 6 Heading
 ```
 
-### 强调
+### Italics
 
-用两对 **\*** 或 **\_** 来包裹目标文本
+mark the italics with **\*** or **\_**
 
 ```md
-**粗体**
-__粗体__
+*Italics*
+_Italics_
 ```
 
-### 引用
+### Bold
 
-用 **>** 来标记块引用
+mark the bold text with **\*** or **\_**
 
 ```md
-> 块引用
->> 嵌套引用
+**Bold Text**
+__Bold Text__
 ```
 
-### 代码块
+### Quote
 
-用 **```** 三个反引用来包裹代码块
+mark quote with **>**
 
-在第一行的 **```** 后可加上编程语言的缩写，在一些场景中可依此支持高亮
+```md
+> Quote
+>> Nested Quote
+```
+
+### Code Block
+
+mark code block with **```**
+
+the abbreviation of the programming language can be added after **```** on the first line, and highlighting can be supported in some scenarios
 
 ```md
 _```js
@@ -58,30 +58,30 @@ _```js
 _```
 ```
 
-### 无序列表
+### Unordered List
  
-用 **\*** 、 **\_** 或 **\+** 加上一个空格来描述无序列表
+mark unordered list with **\*** 、 **\_** or **\+**
 
 ```md
-* 一二三
-* 四五六
+* one two three
+* four five six
 
-- 一二三
-- 四五六
+- one two three
+- four five six
 ```
 
-### 有序列表
+### Ordered List
 
-用数字加上 **.** 来描述有序列表
+mark ordered list with number plus **.**
 
 ```md
-1. 一二三
-2. 四五六
+1. one two three
+2. four five six
 ```
 
-### 分割线
+### Dividing Line
 
-用三个连续的 **\*** 、**\-** 或 **\_** 来描述分割线
+mark dividing line with **\*** 、**\-** 或 **\_**
 
 ```md
 ***
@@ -89,72 +89,73 @@ _```
 ___
 ```
 
-### 链接
+### Link
 
-用 **[ ]** 和 **( )** 的组合来描述链接
+mark link with **[ ]** and **( )**
 
 ```md
 [Nuxt-Theme-Liting](https://nuxt-theme.liting.ink)
 ```
 
-### 图片
+### Image
 
-和上文一样用 **[ ]** 和 **( )** 的组合来描述，不过多了一个 **!**
+mark image with **!** plus **[ ]** and **( )**
 
 ```md
 [!头像](/avatar.jpg)
 ```
 
-### 标记
+### Mark
 
-用一对反引号 **`** 来描述标记
+mark with **`**
 
 ```md
-`标记`
+`mark`
 ```
 
-### 转义
+### Escape
 
-当你想在 MarkDown 中使用特殊字符，如 **\*** 时，可用反斜杠 **\\** 进行转义
+When you want to use special characters in MarkDown, such as **\***, you can use **\\** to escape
 
 ```md
 \#
 ```
 
-## MarkDown高级语法
+## MarkDown Advanced Grammar
 
-### 表格
+### Table
 
-用 **|** 来分隔单元格，用 **-** 来分隔表头和其他行，用 **:** 来设置内容对齐方式
+use **|** to separate cells, use **-** to separate table headers from other lines, and use **:** to set content alignment
 
 ```md
-|  表头   | 表头  |
+|  Header   | Header  |
 |  ----  | ----  |
-| 单元格  | 单元格 |
-| 单元格  | 单元格 |
+| Cell  | Cell |
+| Cell  | Cell |
 
-| 左对齐 | 右对齐 | 居中对齐 |
+| Align Left | Right Align | Center Align |
 | :-----| ----: | :----: |
-| 单元格 | 单元格 | 单元格 |
-| 单元格 | 单元格 | 单元格 |
+| Cell | Cell | Cell |
+| Cell | Cell | Cell |
 ```
 
-## MDC语法
+## MDC Grammar
 
-**MDC** 语法拓展了MarkDown文件对 [Vue.js](https://cn.vuejs.org/) 组件的支持
+**MDC** syntax extends the support of MarkDown files to [Vue.js](https://cn.vuejs.org/) components
 
-### 使用单文件组件
+### Use Sfc
 
-用一对 **::** 可描述一个单文件组件的引入
+mark sfc with **::**
 
-如下：引入了组件 **HelloLayout**，并向该组件的默认插槽传入了文本 `Hello, Nuxt Theme Liting`
+as follows: the component **HelloLayout** is imported, and the text `Hello, Nuxt Theme Liting` is passed to the default slot of the component
+
 ```md
 ::HelloLayout
 Hello, Nuxt Theme Liting
 ::
 ```
 
-尤其是，组件可嵌套使用
+In particular, components can be nested using
 
 ```md
 ::App
@@ -164,16 +165,17 @@ Hello, Nuxt Theme Liting
 ::
 ```
 
-### 内连单文件组件
+### Inline SFC
 
-当不需要向组件传值时，可用 **:** 描述内连单文件组件
+when there is no need to pass values to the component, **:** can be used to describe the inline single-file component
+
 ```md
 :HelloLayout
 ```
 
-### 组件传Props
+### Sfc Pass Props
 
-上述两种组件引入方法都支持传入组件**Props**
+Both of the above two component introduction methods support the incoming component **Props**
 
 ```md
 ::HelloLayout{type="info"}
@@ -186,9 +188,9 @@ type: info
 ::
 ```
 
-### 元素属性拓展
+### Element Attribute Expansion
 
-可以利用 **{}** 包裹类名，用 **[]** 包裹对应文版来为文本新增类名样式
+use **{ }** to wrap the class name, and use **[]** to wrap the corresponding text to add a class name style to the text
 
 ```md
 [Nuxt Theme Liting]{.bg-primary-400}

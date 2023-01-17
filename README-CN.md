@@ -2,7 +2,7 @@
 
 <h1 align="center">Nuxt Theme Liting</h1>
 
-a theme about [Nuxt3](https://github.com/nuxt/framework)
+一个基于 [Nuxt3](https://github.com/nuxt/framework) 的主题
 
 ## install
 

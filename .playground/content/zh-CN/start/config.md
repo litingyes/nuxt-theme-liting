@@ -7,6 +7,7 @@ tags:
 # 主题配置
 
 在项目根目录下的 **nuxt.config.ts** 文件中设置字段如下：
+
 ```ts
 export default defineNuxtConfig({
   ...
@@ -16,6 +17,7 @@ export default defineNuxtConfig({
 ```
 
 然后在项目根目录下的 **app.config.ts** 文件中配置主题设置，如本站点配置：
+
 ```ts
 export default defineAppConfig({
   theme: {
@@ -47,23 +49,37 @@ export default defineAppConfig({
             text: '主题配置',
             path: '/start/config',
           },
-        ],
-      },
-      {
-        text: '部署',
-        items: [
           {
-            text: 'Git使用指南',
-            path: '/deploy/git',
+            text: '文本编辑',
+            path: '/start/md',
           },
           {
-            text: 'Netfify部署指南',
-            path: '/deploy/netlify',
+            text: 'Git使用指南',
+            path: '/start/git',
+          },
+          {
+            text: '站点部署指南',
+            path: '/start/deploy',
           },
         ],
       },
     ],
-    lastUpdateTime: '最近更新时间',
+    lastUpdateTime: {
+      text: '最近更新时间',
+      format: 'yyyy-MM-dd hh:mm',
+    },
+    locales: [
+      {
+        lang: 'en-US',
+        prefix: '/en-US',
+        text: 'English',
+      },
+      {
+        lang: 'zh-CN',
+        prefix: '/zh-CN',
+        text: '简体中文',
+      },
+    ],
   },
 })
 ```
@@ -88,13 +104,13 @@ nav 字段设置的是顶部导航栏功能
 
 ```ts
 interface ThemeConfigNav {
-  timeline: boolean  // 开发中
-  tag: boolean  // 开发中
-  extra: boolean  // 开发中
-  icon: {  // 快捷图标跳转
-    skin?: boolean  // 模式切换
-    i18n?: boolean  // 开发中 
-    github?: ThemeConfigNavIconGithub | string | boolean  // GitHub 跳转
+  timeline: boolean // 文章发布历史记录
+  tag: boolean // 按照标签分类文章
+  extra: boolean // 站外网站推荐
+  icon: {  // 快速图标跳转
+    skin?: boolean  // 切换颜色主题
+    i18n?: boolean  // 切换站点语言 
+    github?: ThemeConfigNavIconGithub | string | boolean  // GitHub 仓库链接
   }
 }
 ```
@@ -119,6 +135,25 @@ interface SidebarItem {
 }
 ```
 
-## `lastUpdateTime: string | boolean`
+## `lastUpdateTime: LastUpdateTime`
 
-lastUpdateTime 字段指的是是否显示文档最近更新时间以及显示文本
+lastUpdateTime 字段指的是是否显示文档最近更新时间以及时间显示格式
+
+```ts
+interface LastUpdateTime {
+  text: string // 最近文档最新时间的前缀文本
+  format: string // 时间格式化格式
+}
+```
+
+## `locales:  false | LocaleItem[]`
+
+locales 字段设置的是站点的文档国际化结构
+
+```ts
+interface LocaleItem {
+  lang: string // 站点语言
+  prefix: string // 路径前缀
+  text: string // 导航栏国际化切换文本
+}
+```
