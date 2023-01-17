@@ -2,7 +2,7 @@
  * @Date: 2022-12-31 17:11:30
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-17 15:47:57
+ * @LastEditTime: 2023-01-17 15:54:16
  * @FilePath: /nuxt-theme-liting/components/liting/Header.vue
 -->
 <script lang="ts" setup>
@@ -19,7 +19,7 @@ const menuPopperVisible = ref(false)
 
 <template>
   <header
-    class="liting-header fixed z-10 w-screen h-16 drop-shadow-2xl flex justify-between items-center px-3 backdrop-blur bg-yellow-100/50 dark:bg-slate-800/50"
+    class="liting-header fixed z-10 w-screen h-16 drop-shadow-2xl flex justify-between items-center px-3 backdrop-blur bg-yellow-100/50 dark:bg-slate-800"
   >
     <NuxtLink to="/" class="interact-btn no-underline font-bold text-2xl flex items-center gap-1">
       <ClientOnly>
