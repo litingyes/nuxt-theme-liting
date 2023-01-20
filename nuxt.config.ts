@@ -2,7 +2,7 @@
  * @Date: 2022-11-21 19:54:30
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-16 21:44:33
+ * @LastEditTime: 2023-01-20 16:40:01
  * @FilePath: /nuxt-theme-liting/nuxt.config.ts
  */
 import { defineNuxtConfig } from 'nuxt/config'
@@ -11,7 +11,7 @@ import { createResolver } from '@nuxt/kit'
 const { resolve } = createResolver(import.meta.url)
 
 export default defineNuxtConfig({
-  css: ['@unocss/reset/normalize.css', resolve('./assets/styles/base.scss')],
+  css: ['@unocss/reset/normalize.css', 'animate.css', resolve('./assets/styles/base.scss')],
   modules: [
     '@nuxt/content',
     '@unocss/nuxt',

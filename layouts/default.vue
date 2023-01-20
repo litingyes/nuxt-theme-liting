@@ -2,7 +2,7 @@
  * @Date: 2023-01-02 08:59:25
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-17 22:53:53
+ * @LastEditTime: 2023-01-20 16:58:57
  * @FilePath: /nuxt-theme-liting/layouts/default.vue
 -->
 <script lang="ts" setup>
@@ -13,21 +13,10 @@ const sidebar = page.value?.sidebar ?? true
 const toc = page.value?.toc ?? true
 
 const sidebarRef = ref()
-const contentRef = ref()
 const tocRef = ref()
 const sidebarVisible = ref(false)
 const tocVisible = ref(false)
-useSwipe(contentRef, {
-  onSwipeEnd(_, direction) {
-    if (direction === 'RIGHT') {
-      sidebarVisible.value = true
-      tocVisible.value = false
-    } else if (direction === 'LEFT') {
-      tocVisible.value = true
-      sidebarVisible.value = false
-    }
-  },
-})
+
 onClickOutside(sidebarRef, () => {
   sidebarVisible.value = false
 })
@@ -41,13 +30,14 @@ onClickOutside(tocRef, () => {
     <main>
       <LitingSidebar
         ref="sidebarRef"
-        class="hidden sm:block fixed top-16 left-0 sm:left-6 pt-8"
-        :class="{ block: sidebarVisible }"
+        class="hidden sm:block fixed top-16 left-0 pt-8 z-10 bg-[var(--bg-color)] animate__animated animate__slideInLeft"
+        :class="{ '!block': sidebarVisible }"
         :show="sidebar"
       ></LitingSidebar>
+      <div class="i-mdi:list-box fixed sm:hidden left-2 bottom-4 text-2xl cursor-pointer" @click="sidebarVisible = true"></div>
       <ContentDoc>
         <template #default="{ doc }">
-          <div ref="contentRef" class="default-layout__content mx-0 sm:mx-50 p-4">
+          <div class="default-layout__content mx-0 sm:mx-50 p-4">
             <ContentRenderer :value="doc" />
             <div class="my-4 flex justify-end">
               <div v-if="themeConfig.lastUpdateTime && page.unixCommitter"
@@ -63,11 +53,12 @@ onClickOutside(tocRef, () => {
       </ContentDoc>
       <LitingToc
         ref="tocRef"
-        class="hidden sm:block fixed top-16 right-0 pt-12"
-        :class="{ block: tocVisible }"
+        class="hidden sm:block fixed top-16 right-0 pt-12 z-10 bg-[var(--bg-color)] animate__animated animate__slideInRight"
+        :class="{ '!block': tocVisible }"
         :show="toc"
         :toc="page?.body?.toc"
       ></LitingToc>
+      <div class="i-ph:list-bold fixed sm:hidden right-2 bottom-4 text-2xl cursor-pointer" @click="tocVisible = true"></div>
     </main>
   </div>
 </template>

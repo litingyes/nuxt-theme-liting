@@ -16,6 +16,7 @@ specifiers:
   '@unocss/nuxt': ^0.48.4
   '@vueuse/core': ^9.11.0
   '@vueuse/nuxt': ^9.11.0
+  animate.css: ^4.1.1
   commitizen: ^4.2.6
   date-fns: ^2.29.3
   eslint: ^8.32.0
@@ -40,6 +41,7 @@ dependencies:
   '@unocss/nuxt': 0.48.4_6clk5yk7iffii7jyt5t674hubi
   '@vueuse/core': 9.11.0_vue@3.2.45
   '@vueuse/nuxt': 9.11.0_xsv3vwo4hvye53m3n4ybcmydue
+  animate.css: 4.1.1
   date-fns: 2.29.3
   execa: 6.1.0
   sass: 1.57.1
@@ -2491,6 +2493,10 @@ packages:
       require-from-string: 2.0.2
       uri-js: 4.4.1
     dev: true
+
+  /animate.css/4.1.1:
+    resolution: { integrity: sha512-+mRmCTv6SbCmtYJCN4faJMNFVNN5EuCTTprDTAo7YzIGji2KADmakjVA3+8mVDkZ2Bf09vayB35lSQIex2+QaQ== }
+    dev: false
 
   /ansi-align/3.0.1:
     resolution: { integrity: sha512-IOfwwBF5iczOjp/WeY4YxyjqAFMQoZufdQWDd19SEExbVLNXqvpzSJ/M7Za4/sCPmQ0+GRquoA7bGcINcxew6w== }

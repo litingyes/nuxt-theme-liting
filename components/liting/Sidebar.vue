@@ -2,7 +2,7 @@
  * @Date: 2023-01-04 20:12:47
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-17 20:35:26
+ * @LastEditTime: 2023-01-20 16:37:04
  * @FilePath: /nuxt-theme-liting/components/liting/Sidebar.vue
 -->
 <script lang="ts" setup>
@@ -28,7 +28,7 @@ const closeSubMenu = () => {
 </script>
 
 <template>
-  <div class="liting-sidebar w-50 select-none h-full bg-[var(--bg-color)] shadow-lg">
+  <div class="liting-sidebar w-50 select-none h-full shadow-lg">
     <ClientOnly>
       <ElMenu
         class="!border-r-0"
