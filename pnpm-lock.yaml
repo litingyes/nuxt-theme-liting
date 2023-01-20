@@ -35,6 +35,7 @@ specifiers:
 
 dependencies:
   '@element-plus/nuxt': 1.0.2_bkhe455bmuygs7sjw6jvgazfza
+  '@iconify/json': 2.2.9
   '@nuxt/content': 2.3.0_rollup@2.79.1
   '@nuxtjs/color-mode': 3.2.0_rollup@2.79.1
   '@nuxtjs/google-fonts': 3.0.0-1_rollup@2.79.1
@@ -53,7 +54,6 @@ devDependencies:
   '@commitlint/cli': 17.4.2
   '@commitlint/config-conventional': 17.4.2
   '@commitlint/cz-commitlint': 17.4.2_i4x6owxztfhigiiqlxwntt4k24
-  '@iconify/json': 2.2.9
   '@nuxtjs/eslint-config-typescript': 12.0.0_7uibuqfxkfaozanbtbziikiqje
   '@release-it/conventional-changelog': 5.1.1_release-it@15.6.0
   commitizen: 4.3.0
@@ -961,10 +961,11 @@ packages:
     dependencies:
       '@iconify/types': 2.0.0
       pathe: 1.0.0
-    dev: true
+    dev: false
 
   /@iconify/types/2.0.0:
     resolution: { integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg== }
+    dev: false
 
   /@iconify/utils/2.0.12:
     resolution: { integrity: sha512-hhUyt1/k5RRhfcW/PRRdBw8e1ACehJT5QEZJRm7HnkCiUx11/0ccLr7K0OMlPSwjnfYcBS2gAUD3EpmL0iJCkQ== }
