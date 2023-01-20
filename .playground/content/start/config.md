@@ -30,7 +30,6 @@ export default defineAppConfig({
       extra: true,
       icon: {
         skin: true,
-        i18n: false,
         github: {
           disabled: false,
           url: 'https://github.com/liting-yes/nuxt-theme-liting.git',
@@ -109,7 +108,6 @@ interface ThemeConfigNav {
   extra: boolean // 站外网站推荐
   icon: {  // 快速图标跳转
     skin?: boolean  // 切换颜色主题
-    i18n?: boolean  // 切换站点语言 
     github?: ThemeConfigNavIconGithub | string | boolean  // GitHub 仓库链接
   }
 }

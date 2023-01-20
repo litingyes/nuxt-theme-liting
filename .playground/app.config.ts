@@ -2,7 +2,7 @@
  * @Date: 2022-12-31 14:51:13
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-17 00:34:07
+ * @LastEditTime: 2023-01-20 13:26:51
  * @FilePath: /nuxt-theme-liting/.playground/app.config.ts
  */
 export default defineAppConfig({
@@ -16,7 +16,6 @@ export default defineAppConfig({
       extra: true,
       icon: {
         skin: true,
-        i18n: false,
         github: {
           disabled: false,
           url: 'https://github.com/liting-yes/nuxt-theme-liting.git',

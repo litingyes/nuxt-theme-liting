@@ -2,17 +2,12 @@
  * @Date: 2022-12-31 17:11:30
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-17 15:54:16
+ * @LastEditTime: 2023-01-20 13:24:59
  * @FilePath: /nuxt-theme-liting/components/liting/Header.vue
 -->
 <script lang="ts" setup>
 const themeConfig = useThemeConfig()
 const colorMode = useColorMode()
-
-const { setLang } = useLocale()
-const handleClickLocale = (lang: string) => {
-  setLang && setLang(lang)
-}
 
 const menuPopperVisible = ref(false)
 </script>
@@ -31,28 +26,6 @@ const menuPopperVisible = ref(false)
       <NuxtLink v-if="themeConfig.nav?.timeline" to="/timeline" class="interact-btn text-xl no-underline">时间线</NuxtLink>
       <NuxtLink v-if="themeConfig.nav?.tag" to="/tag" class="interact-btn text-xl no-underline">标签</NuxtLink>
       <NuxtLink v-if="themeConfig.nav?.extra" to="/extra" class="interact-btn text-xl no-underline">其他</NuxtLink>
-      <ClientOnly>
-        <ElDropdown
-          v-if="themeConfig.locales"
-          size="small"
-          trigger="click"
-          popper-class="liting-header__popper"
-          @command="handleClickLocale"
-        >
-          <div class="i-ion:language-outline text-[var(--text-color)] interact-btn text-2xl" />
-          <template #dropdown>
-            <ElDropdownMenu>
-              <ElDropdownItem
-                v-for="locale in themeConfig.locales"
-                :key="locale.prefix"
-                class="!text-[var(--text-color)] interact-btn text-sm"
-                :command="locale.lang"
-                >{{ locale.text }}</ElDropdownItem
-              >
-            </ElDropdownMenu>
-          </template>
-        </ElDropdown>
-      </ClientOnly>
       <template v-if="themeConfig.nav?.icon?.skin">
         <div
           v-show="colorMode.preference === 'system'"
@@ -102,28 +75,6 @@ const menuPopperVisible = ref(false)
                 <NuxtLink to="/extra" class="interact-btn text-sm no-underline">其他</NuxtLink>
               </el-dropdown-item>
             </el-dropdown-menu>
-          </template>
-        </ElDropdown>
-      </ClientOnly>
-      <ClientOnly>
-        <ElDropdown
-          v-if="themeConfig.locales"
-          size="small"
-          trigger="click"
-          popper-class="liting-header__popper"
-          @command="handleClickLocale"
-        >
-          <div class="i-ion:language-outline text-[var(--text-color)] interact-btn text-2xl" />
-          <template #dropdown>
-            <ElDropdownMenu>
-              <ElDropdownItem
-                v-for="locale in themeConfig.locales"
-                :key="locale.prefix"
-                class="!text-[var(--text-color)] interact-btn text-sm"
-                :command="locale.lang"
-                >{{ locale.text }}</ElDropdownItem
-              >
-            </ElDropdownMenu>
           </template>
         </ElDropdown>
       </ClientOnly>
