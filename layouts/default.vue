@@ -2,7 +2,7 @@
  * @Date: 2023-01-02 08:59:25
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-20 16:58:57
+ * @LastEditTime: 2023-01-20 17:05:30
  * @FilePath: /nuxt-theme-liting/layouts/default.vue
 -->
 <script lang="ts" setup>
@@ -30,7 +30,7 @@ onClickOutside(tocRef, () => {
     <main>
       <LitingSidebar
         ref="sidebarRef"
-        class="hidden sm:block fixed top-16 left-0 pt-8 z-10 bg-[var(--bg-color)] animate__animated animate__slideInLeft"
+        class="hidden sm:block fixed top-16 left-0 pt-8 z-10 bg-[var(--bg-color)] animate__animated animate__slideInLeft sm:animate-none"
         :class="{ '!block': sidebarVisible }"
         :show="sidebar"
       ></LitingSidebar>
@@ -53,7 +53,7 @@ onClickOutside(tocRef, () => {
       </ContentDoc>
       <LitingToc
         ref="tocRef"
-        class="hidden sm:block fixed top-16 right-0 pt-12 z-10 bg-[var(--bg-color)] animate__animated animate__slideInRight"
+        class="hidden sm:block fixed top-16 right-0 pt-12 z-10 bg-[var(--bg-color)] animate__animated animate__slideInRight sm:animate-none"
         :class="{ '!block': tocVisible }"
         :show="toc"
         :toc="page?.body?.toc"
