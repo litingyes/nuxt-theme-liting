@@ -13,6 +13,7 @@ specifiers:
   '@nuxtjs/google-fonts': 3.0.0-1
   '@pinia/nuxt': ^0.4.6
   '@release-it/conventional-changelog': ^5.1.1
+  '@types/glob': ^8.0.0
   '@unocss/nuxt': ^0.48.4
   '@vueuse/core': ^9.11.0
   '@vueuse/nuxt': ^9.11.0
@@ -22,6 +23,7 @@ specifiers:
   eslint-config-prettier: ^8.6.0
   eslint-plugin-prettier: ^4.2.1
   execa: ^6.1.0
+  glob: ^8.1.0
   husky: ^8.0.3
   inquirer: ^8.2.5
   lint-staged: ^13.1.0
@@ -42,6 +44,7 @@ dependencies:
   '@vueuse/nuxt': 9.11.0_xsv3vwo4hvye53m3n4ybcmydue
   date-fns: 2.29.3
   execa: 6.1.0
+  glob: 8.1.0
   sass: 1.57.1
 
 devDependencies:
@@ -52,6 +55,7 @@ devDependencies:
   '@iconify/json': 2.2.8
   '@nuxtjs/eslint-config-typescript': 12.0.0_7uibuqfxkfaozanbtbziikiqje
   '@release-it/conventional-changelog': 5.1.1_release-it@15.6.0
+  '@types/glob': 8.0.0
   commitizen: 4.2.6
   eslint: 8.32.0
   eslint-config-prettier: 8.6.0_eslint@8.32.0
@@ -1652,13 +1656,13 @@ packages:
     resolution: { integrity: sha512-9K4zoImiZc3HlIp6AVUDE4CWYx22a+lhSZMYNpbjW04+YF0KWj4pJXnEMjdnFTiQibFFmElcsasJXDbdI/EPhA== }
     dependencies:
       '@types/eslint': 8.4.10
-      '@types/estree': 0.0.51
+      '@types/estree': 1.0.0
     dev: false
 
   /@types/eslint/8.4.10:
     resolution: { integrity: sha512-Sl/HOqN8NKPmhWo2VBEPm0nvHnu2LL3v9vKo8MEq0EtbJ4eVzGPl41VNPvn5E1i5poMk4/XD8UriLHpJvEP/Nw== }
     dependencies:
-      '@types/estree': 0.0.51
+      '@types/estree': 1.0.0
       '@types/json-schema': 7.0.11
     dev: false
 
@@ -1668,6 +1672,13 @@ packages:
 
   /@types/estree/1.0.0:
     resolution: { integrity: sha512-WulqXMDUTYAXCjZnk6JtIHPigp55cVtDgDrO2gHRwhyJto21+1zbVCtOYB2L1F9w4qCQ0rOGWBnBe0FNTiEJIQ== }
+
+  /@types/glob/8.0.0:
+    resolution: { integrity: sha512-l6NQsDDyQUVeoTynNpC9uRvCUint/gSUXQA2euwmTuWGvPY5LSDUu6tkCtJB2SvGQlJQzLaKqcGZP4//7EDveA== }
+    dependencies:
+      '@types/minimatch': 5.1.2
+      '@types/node': 18.11.18
+    dev: true
 
   /@types/hast/2.3.4:
     resolution: { integrity: sha512-wLEm0QvaoawEDoTRwzTXp4b4jpwiJDvR5KMnFnVodm3scufTlBOWRD6N1OBf9TZMhjlNsSfcO5V+7AF4+Vy+9g== }
@@ -1700,6 +1711,10 @@ packages:
     resolution: { integrity: sha512-W864tg/Osz1+9f4lrGTZpCSO5/z4608eUp19tbozkq2HJK6i3z1kT0H9tlADXuYIb1YYOBByU4Jsqkk75q48qA== }
     dependencies:
       '@types/unist': 2.0.6
+
+  /@types/minimatch/5.1.2:
+    resolution: { integrity: sha512-K0VQKziLUWkVKiRVrx4a40iPaxTUefQmjtkQofBkYRcoaaL/8rhwDWww9qWbrgicNOgnpIsMxyNIUM4+n6dUIA== }
+    dev: true
 
   /@types/minimist/1.2.2:
     resolution: { integrity: sha512-jhuKLIRrhvCPLqwPcx6INqmKeiA5EWrsCOPhrlFSrbrmU4ZMPjj5Ul/oLCMDO98XRUIwVm78xICz4EPCektzeQ== }
