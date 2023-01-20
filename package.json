@@ -22,6 +22,20 @@
     "access": "public",
     "registry": "https://registry.npmjs.org"
   },
+  "files": [
+    "assets/",
+    "components/",
+    "composables/",
+    "layouts/",
+    "public/",
+    "server/",
+    "stores/",
+    "utiles/",
+    "app.config.ts",
+    "app.vue",
+    "nuxt.config.ts",
+    "theme.d.ts"
+  ],
   "scripts": {
     "refresh": "nuxi prepare & nuxi prepare .playground",
     "cleanup": "nuxi cleanup .playground",
