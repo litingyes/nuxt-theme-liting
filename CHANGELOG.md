@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.2](https://github.com/liting-yes/nuxt-theme-liting/compare/0.3.1...0.3.2) (2023-01-20)
+
+### Bug Fixes
+
+- **dep:** add element-plus to dependencies
+  ([daa32db](https://github.com/liting-yes/nuxt-theme-liting/commit/daa32db9d9c9a2dcc1ca12cdaa6945887319ffbf))
+
 ## [0.3.1](https://github.com/liting-yes/nuxt-theme-liting/compare/0.3.0...0.3.1) (2023-01-20)
 
 ### ⚠ BREAKING CHANGES
