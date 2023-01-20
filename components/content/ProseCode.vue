@@ -2,7 +2,7 @@
  * @Date: 2023-01-05 23:07:57
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-13 01:06:54
+ * @LastEditTime: 2023-01-20 16:00:55
  * @FilePath: /nuxt-theme-liting/components/content/ProseCode.vue
 -->
 <script lang="ts">
@@ -41,5 +41,6 @@ export default defineComponent({
 pre code .line {
   display: block;
   min-height: 1rem;
+  white-space: break-spaces;
 }
 </style>
