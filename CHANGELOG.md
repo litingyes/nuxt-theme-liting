@@ -1,5 +1,35 @@
 # Changelog
 
+## [0.3.1](https://github.com/liting-yes/nuxt-theme-liting/compare/0.3.0...0.3.1) (2023-01-20)
+
+### ⚠ BREAKING CHANGES
+
+- no suitable implementation has been found yet about i18n
+- add theme config item
+
+### Features
+
+- **default:** add not-found slot
+  ([1d51d84](https://github.com/liting-yes/nuxt-theme-liting/commit/1d51d8459819c9d5cffda80acbbadf27235065db))
+- i18n ([5cdf0df](https://github.com/liting-yes/nuxt-theme-liting/commit/5cdf0df127484040516fd9ffdcaec163402a1dfc))
+
+### Bug Fixes
+
+- **default:** responsive design
+  ([7ef3eb1](https://github.com/liting-yes/nuxt-theme-liting/commit/7ef3eb169ab4dd692067fdf3347fad779d23b669))
+- **default:** rm animation on pc layout
+  ([d950de4](https://github.com/liting-yes/nuxt-theme-liting/commit/d950de44111a84eb15bab63e7529838de7228ccd))
+- **default:** undefined of sidebar and body in page obj
+  ([e7fcf6c](https://github.com/liting-yes/nuxt-theme-liting/commit/e7fcf6c5adc0012690b532d4c1c56ff552e8126d))
+- **header:** color about i18n btn
+  ([9f3bed9](https://github.com/liting-yes/nuxt-theme-liting/commit/9f3bed9d3f9361d48033ad9fc812aaefacee0467))
+- **locale:** try to fix static generate file
+  ([64bb166](https://github.com/liting-yes/nuxt-theme-liting/commit/64bb16602efaae3d1d3be1b3d338d98aae6b30b1))
+- **ProseCode:** wrap when too long
+  ([c67a95b](https://github.com/liting-yes/nuxt-theme-liting/commit/c67a95beddfd78a2544e998b16757b12745d6294))
+
+- rm i18n ([39dd0c8](https://github.com/liting-yes/nuxt-theme-liting/commit/39dd0c81948603630308c172d942e45c0d6d279e))
+
 ## [0.3.0](https://github.com/liting-yes/nuxt-theme-liting/compare/0.2.0...0.3.0) (2023-01-16)
 
 ### Features
