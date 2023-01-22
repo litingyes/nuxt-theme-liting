@@ -2,7 +2,7 @@
  * @Date: 2023-01-16 23:38:45
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-22 19:28:04
+ * @LastEditTime: 2023-01-22 21:14:22
  * @FilePath: /nuxt-theme-liting/composables/useLocale.ts
  */
 export const useLocale = () => {
@@ -50,6 +50,9 @@ export const useLocale = () => {
     }
     !removed && (path = path.slice(1))
     path = currentLocale.value?.prefix + path
+    if (path === currentLocale.value?.prefix && path !== '/') {
+      path = path.slice(0, -1)
+    }
     if (path === route.fullPath) return
     navigateTo(path)
   }

@@ -2,7 +2,7 @@
  * @Date: 2023-01-14 22:58:39
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-22 19:27:13
+ * @LastEditTime: 2023-01-22 20:46:06
  * @FilePath: /nuxt-theme-liting/components/liting/PageList.vue
 -->
 <script lang="ts" setup>
@@ -61,11 +61,11 @@ const { filterPages } = useLocale()
         <NuxtLink class="block px-6 py-4" :to="page._path">
           <h2 class="text-base font-semibold mb-2">{{ page.title ?? '标题为空' }}</h2>
           <p v-if="page.description" class="text-sm my-2">{{ page.description }}</p>
-          <div class="text-right my-2 text-xs"
+          <div v-if="themeConfig?.lastUpdateTime && page.unixCommitter" class="text-right my-2 text-xs"
             >{{ (themeConfig?.lastUpdateTime as Theme.LastUpdateTime).text }} :
             {{
               format(
-                page.unixCommitter ? (page.unixCommitter as number) * 1000 : Date.now(),
+                (page.unixCommitter as number) * 1000,
                 (themeConfig?.lastUpdateTime as Theme.LastUpdateTime).format as string
               )
             }}</div

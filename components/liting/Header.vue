@@ -2,17 +2,21 @@
  * @Date: 2022-12-31 17:11:30
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-22 18:20:49
+ * @LastEditTime: 2023-01-22 21:11:09
  * @FilePath: /nuxt-theme-liting/components/liting/Header.vue
 -->
 <script lang="ts" setup>
 const { themeConfig } = useThemeConfig()
 const colorMode = useColorMode()
 
-const { setLang, currentLocale } = useLocale()
+const { disabled, setLang, currentLocale } = useLocale()
 const handleClickLocale = (lang: string) => {
   setLang && setLang(lang)
 }
+const homePath = computed(() => {
+  if (disabled.value || currentLocale?.value?.prefix === '/') return '/'
+  return currentLocale?.value?.prefix.slice(0, -1)
+})
 
 const menuPopperVisible = ref(false)
 </script>
@@ -21,7 +25,7 @@ const menuPopperVisible = ref(false)
   <header
     class="liting-header fixed z-10 w-screen h-16 drop-shadow-2xl flex justify-between items-center px-3 backdrop-blur bg-yellow-100/50 dark:bg-slate-800"
   >
-    <NuxtLink :to="currentLocale?.prefix" class="interact-btn no-underline font-bold text-2xl flex items-center gap-1">
+    <NuxtLink :to="homePath" class="interact-btn no-underline font-bold text-2xl flex items-center gap-1">
       <ClientOnly>
         <img v-if="themeConfig?.logo" class="w-8 h-8 sm:w-12 sm:h-12" src="../../public/logo.png" alt="logo" />
       </ClientOnly>
