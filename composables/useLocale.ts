@@ -2,7 +2,7 @@
  * @Date: 2023-01-16 23:38:45
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-22 23:14:06
+ * @LastEditTime: 2023-01-22 23:21:23
  * @FilePath: /nuxt-theme-liting/composables/useLocale.ts
  */
 export const useLocale = () => {
@@ -28,6 +28,7 @@ export const useLocale = () => {
   if (!langs.value.includes(currentLang.value)) currentLang.value = langs.value[0]
 
   const currentLocale = computed(() => locales.find((locale) => locale.lang === currentLang.value))
+  const prefixsWithoutDefault = locales.map((locale) => locale.prefix).filter((prefix) => prefix !== '')
 
   const setLang = (lang: string) => {
     if (!langs.value.includes(lang)) {
@@ -37,7 +38,6 @@ export const useLocale = () => {
     currentLang.value = lang
     const route = useRoute()
     let path = route.fullPath
-    const prefixsWithoutDefault = locales.map((locale) => locale.prefix).filter((prefix) => prefix !== '/')
     let removed = false
     let i = 0
     while (!removed && i < prefixsWithoutDefault.length) {
@@ -47,7 +47,7 @@ export const useLocale = () => {
       }
       i++
     }
-    currentLocale.value?.prefix !== '/' && (path = currentLocale.value?.prefix + path)
+    path = currentLocale.value?.prefix + path
 
     if (path === route.fullPath) return
     navigateTo(path)
@@ -55,9 +55,8 @@ export const useLocale = () => {
 
   filterPages = (pages: Array<Partial<Theme.PageInfo>>, limit?: number) => {
     pages = pages.filter((page) => page.title)
-    if (currentLocale?.value?.prefix === '/') {
-      const prefixs = locales?.map((locale) => locale.prefix).filter((prefix) => prefix !== '/')
-      pages = pages.filter((page) => !prefixs?.some((prefix) => page._path?.startsWith(prefix)))
+    if (currentLocale?.value?.prefix === '') {
+      pages = pages.filter((page) => !prefixsWithoutDefault?.some((prefix) => page._path?.startsWith(prefix)))
     } else {
       pages = pages.filter((page) => page._path?.startsWith(currentLocale.value?.prefix as string))
     }

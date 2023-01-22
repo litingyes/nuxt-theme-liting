@@ -2,7 +2,7 @@
  * @Date: 2023-01-22 12:44:06
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-22 23:05:44
+ * @LastEditTime: 2023-01-22 23:18:28
  * @FilePath: /nuxt-theme-liting/stores/useThemeConfig.ts
  */
 import { defineStore } from 'pinia'
@@ -10,7 +10,7 @@ import { defineStore } from 'pinia'
 let keyIndex = 0
 
 const normalizePrefix = (prefix: string) => {
-  if (prefix === '/') return prefix
+  if (prefix === '/') return ''
 
   if (!prefix.startsWith('/')) {
     prefix = `/${prefix}`
