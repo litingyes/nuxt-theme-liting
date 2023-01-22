@@ -2,7 +2,7 @@
  * @Date: 2022-12-31 17:11:30
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-22 23:29:40
+ * @LastEditTime: 2023-01-22 23:46:12
  * @FilePath: /nuxt-theme-liting/components/liting/Header.vue
 -->
 <script lang="ts" setup>
@@ -35,14 +35,17 @@ const menuPopperVisible = ref(false)
       <NuxtLink
         v-if="themeConfig?.nav?.timeline"
         :to="`${currentLocale?.prefix}/timeline`"
-        class="interact-btn text-xl no-underline"
-        >时间线</NuxtLink
+        class="interact-btn text-lg no-underline"
+        >{{ currentLocale?.nav?.timeline }}</NuxtLink
       >
-      <NuxtLink v-if="themeConfig?.nav?.tag" :to="`${currentLocale?.prefix}/tag`" class="interact-btn text-xl no-underline"
-        >标签</NuxtLink
-      >
-      <NuxtLink v-if="themeConfig?.nav?.extra" :to="`${currentLocale?.prefix}/extra`" class="interact-btn text-xl no-underline"
-        >其他</NuxtLink
+      <NuxtLink v-if="themeConfig?.nav?.tag" :to="`${currentLocale?.prefix}/tag`" class="interact-btn text-lg no-underline">{{
+        currentLocale?.nav?.tag
+      }}</NuxtLink>
+      <NuxtLink
+        v-if="themeConfig?.nav?.extra"
+        :to="`${currentLocale?.prefix}/extra`"
+        class="interact-btn text-lg no-underline"
+        >{{ currentLocale?.nav?.extra }}</NuxtLink
       >
       <ClientOnly>
         <ElDropdown
@@ -106,13 +109,19 @@ const menuPopperVisible = ref(false)
           <template #dropdown>
             <el-dropdown-menu>
               <el-dropdown-item v-if="themeConfig?.nav?.timeline">
-                <NuxtLink :to="`${currentLocale?.prefix}/timeline`" class="interact-btn text-sm no-underline">时间线</NuxtLink>
+                <NuxtLink :to="`${currentLocale?.prefix}/timeline`" class="interact-btn text-sm no-underline">{{
+                  currentLocale?.nav?.timeline
+                }}</NuxtLink>
               </el-dropdown-item>
               <el-dropdown-item v-if="themeConfig?.nav?.tag">
-                <NuxtLink :to="`${currentLocale?.prefix}/tag`" class="interact-btn text-sm no-underline">标签</NuxtLink>
+                <NuxtLink :to="`${currentLocale?.prefix}/tag`" class="interact-btn text-sm no-underline">{{
+                  currentLocale?.nav?.tag
+                }}</NuxtLink>
               </el-dropdown-item>
               <el-dropdown-item v-if="themeConfig?.nav?.extra">
-                <NuxtLink :to="`${currentLocale?.prefix}/extra`" class="interact-btn text-sm no-underline">其他</NuxtLink>
+                <NuxtLink :to="`${currentLocale?.prefix}/extra`" class="interact-btn text-sm no-underline">{{
+                  currentLocale?.nav?.extra
+                }}</NuxtLink>
               </el-dropdown-item>
             </el-dropdown-menu>
           </template>

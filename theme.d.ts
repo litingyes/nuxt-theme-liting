@@ -2,11 +2,7 @@
  * @Date: 2023-01-03 00:33:34
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
-<<<<<<< HEAD
- * @LastEditTime: 2023-01-22 19:51:55
-=======
- * @LastEditTime: 2023-01-22 10:50:57
->>>>>>> i18n
+ * @LastEditTime: 2023-01-22 23:41:34
  * @FilePath: /nuxt-theme-liting/theme.d.ts
  */
 import { ParsedContent } from '@nuxt/content/dist/runtime/types'
@@ -48,10 +44,13 @@ declare namespace Theme {
     format: string
   }
 
+  type NavLocaleItem = Partial<Record<Exclude<keyof Nav, 'icon'>, string>>
+
   interface LocaleItem {
     lang: string
     prefix: string
     text: string
+    nav?: NavLocaleItem
   }
 
   interface Config {

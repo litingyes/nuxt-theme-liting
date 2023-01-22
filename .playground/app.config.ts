@@ -2,7 +2,7 @@
  * @Date: 2022-12-31 14:51:13
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-22 19:52:26
+ * @LastEditTime: 2023-01-22 23:41:48
  * @FilePath: /nuxt-theme-liting/.playground/app.config.ts
  */
 export default defineAppConfig({
@@ -50,7 +50,7 @@ export default defineAppConfig({
           ],
         },
       ],
-      '/zh-cn/': [
+      '/zh-cn': [
         {
           text: '开始',
           items: [
@@ -87,11 +87,21 @@ export default defineAppConfig({
         lang: 'en-US',
         prefix: '/',
         text: 'English',
+        nav: {
+          timeline: 'TimeLine',
+          tag: 'Tag',
+          extra: 'Extra',
+        },
       },
       {
         lang: 'zh-CN',
-        prefix: '/zh-cn/',
+        prefix: '/zh-cn',
         text: '简体中文',
+        nav: {
+          timeline: '时间线',
+          tag: '标签',
+          extra: '额外',
+        },
       },
     ],
   },
