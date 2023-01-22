@@ -2,11 +2,16 @@
  * @Date: 2023-01-08 22:04:56
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-22 18:35:05
+ * @LastEditTime: 2023-01-23 01:31:06
  * @FilePath: /nuxt-theme-liting/server/plugins/fileTime.ts
  */
 import path from 'path'
 import { execa } from 'execa'
+import type { NitroAppPlugin } from 'nitropack'
+
+export function defineNitroPlugin(def: NitroAppPlugin): NitroAppPlugin {
+  return def
+}
 
 const contentDir = '.playground'
 
