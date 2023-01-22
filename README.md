@@ -9,3 +9,7 @@ a theme about [Nuxt3](https://github.com/nuxt/framework)
 ```sh
 npm i nuxt-theme-liting
 ```
+
+## warn
+
+- i18n of docs isn't recommended now for some problems on home-page unsolved
