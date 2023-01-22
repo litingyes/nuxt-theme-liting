@@ -1,5 +1,5 @@
 ---
-layout: extra
+layout: 其他
 extra:
   - 
     text: 前端

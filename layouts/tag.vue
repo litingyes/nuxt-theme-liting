@@ -2,17 +2,14 @@
  * @Date: 2023-01-15 11:47:08
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-17 16:03:21
+ * @LastEditTime: 2023-01-22 18:59:08
  * @FilePath: /nuxt-theme-liting/layouts/tag.vue
 -->
 <script lang="ts" setup>
-const { disabled, currentLocale } = useLocale()
+const { disabled, currentLocale, filterPages } = useLocale()
 
-let pages: Array<Partial<Theme.PageInfo>> = await queryContent((disabled ? '/' : currentLocale?.value?.prefix) as string)
-  .only(THEME_QUERY_ONLY)
-  .sort({ unixAuthor: -1 })
-  .find()
-pages = pages.filter((page) => page.title)
+let pages: Array<Partial<Theme.PageInfo>> = await queryContent('/').only(THEME_QUERY_ONLY).sort({ unixAuthor: -1 }).find()
+pages = filterPages(pages)
 
 const tags = computed(() => {
   const tags: string[] = ['all']
@@ -78,6 +75,10 @@ const selectedTag = ref(tags.value[0])
         <span>{{ tag.tag }} {{ tag.total }}</span></li
       >
     </ul>
-    <LitingPageList class="!px-0 !sm:px-8 pb-4" :list="pagesData[selectedTag].list"></LitingPageList>
+    <LitingPageList
+      class="!px-0 !sm:px-8 pb-4"
+      :path="disabled ? '/' : currentLocale?.prefix"
+      :list="pagesData[selectedTag].list"
+    ></LitingPageList>
   </div>
 </template>

@@ -2,7 +2,7 @@
  * @Date: 2023-01-04 20:12:47
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-17 20:35:26
+ * @LastEditTime: 2023-01-22 19:23:27
  * @FilePath: /nuxt-theme-liting/components/liting/Sidebar.vue
 -->
 <script lang="ts" setup>
@@ -13,11 +13,19 @@ const props = withDefaults(defineProps<Props>(), {
   show: true,
 })
 
-const themeConfig = useThemeConfig()
+const { themeConfig } = useThemeConfig()
+const { disabled, currentLocale } = useLocale()
+const sidebar = computed(() => {
+  if (disabled.value) {
+    return themeConfig?.sidebar as Theme.Sidebar[]
+  } else {
+    return (themeConfig?.sidebar as Record<string, Theme.Sidebar[]>)[currentLocale!.value!.prefix]
+  }
+})
 
 const sidebarState = useSidebarState()
-if (themeConfig.value.sidebar?.length && !sidebarState.expanding) {
-  sidebarState.updateExpanding(themeConfig.value.sidebar[0].key)
+if (themeConfig?.sidebar?.length && !sidebarState.expanding) {
+  sidebarState.updateExpanding(sidebar.value[0].key)
 }
 const openSubMenu = (key: string) => {
   sidebarState.updateExpanding(key)
@@ -38,7 +46,7 @@ const closeSubMenu = () => {
         @open="openSubMenu"
         @close="closeSubMenu"
       >
-        <ElSubMenu v-for="level1 in themeConfig.sidebar" :key="level1.key" :index="(level1.key as string)">
+        <ElSubMenu v-for="level1 in sidebar" :key="level1.key" :index="(level1.key as string)">
           <template #title>
             {{ level1.text }}
           </template>

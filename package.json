@@ -18,6 +18,7 @@
     "vue"
   ],
   "main": "./nuxt.config.ts",
+  "types": "./theme.d.ts",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"
@@ -32,7 +33,7 @@
     "preview": "nuxi preview .playground",
     "commit": "git-cz",
     "release": "release-it",
-    "format": "eslint --fix ."
+    "format": "prettier --write --list-different --ignore-unknown ."
   },
   "dependencies": {
     "@element-plus/nuxt": "^1.0.2",
@@ -46,6 +47,7 @@
     "date-fns": "^2.29.3",
     "execa": "^6.1.0",
     "glob": "^8.1.0",
+    "lodash-es": "^4.17.21",
     "sass": "^1.57.1"
   },
   "devDependencies": {
@@ -80,7 +82,7 @@
     }
   },
   "lint-staged": {
-    "*": "prettier --write --ignore-unknown",
+    "*": "prettier --write --ignore-unknown --list-different",
     "*.{ts,vue,md,json,yaml}": "eslint --fix"
   }
 }
