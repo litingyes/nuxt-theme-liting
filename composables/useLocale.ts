@@ -2,7 +2,7 @@
  * @Date: 2023-01-16 23:38:45
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-22 21:14:22
+ * @LastEditTime: 2023-01-22 23:14:06
  * @FilePath: /nuxt-theme-liting/composables/useLocale.ts
  */
 export const useLocale = () => {
@@ -37,22 +37,18 @@ export const useLocale = () => {
     currentLang.value = lang
     const route = useRoute()
     let path = route.fullPath
-    const prefixs = locales.map((locale) => locale.prefix).filter((prefix) => prefix !== '/')
-
+    const prefixsWithoutDefault = locales.map((locale) => locale.prefix).filter((prefix) => prefix !== '/')
     let removed = false
     let i = 0
-    while (!removed && i < prefixs.length) {
-      if (path.startsWith(prefixs[i])) {
-        path = path.replace(prefixs[i], '')
+    while (!removed && i < prefixsWithoutDefault.length) {
+      if (path.startsWith(prefixsWithoutDefault[i])) {
+        path = path.replace(prefixsWithoutDefault[i], '')
         removed = true
       }
       i++
     }
-    !removed && (path = path.slice(1))
-    path = currentLocale.value?.prefix + path
-    if (path === currentLocale.value?.prefix && path !== '/') {
-      path = path.slice(0, -1)
-    }
+    currentLocale.value?.prefix !== '/' && (path = currentLocale.value?.prefix + path)
+
     if (path === route.fullPath) return
     navigateTo(path)
   }

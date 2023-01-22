@@ -2,7 +2,7 @@
  * @Date: 2022-12-31 17:11:30
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-22 21:11:09
+ * @LastEditTime: 2023-01-22 23:07:07
  * @FilePath: /nuxt-theme-liting/components/liting/Header.vue
 -->
 <script lang="ts" setup>
@@ -14,8 +14,8 @@ const handleClickLocale = (lang: string) => {
   setLang && setLang(lang)
 }
 const homePath = computed(() => {
-  if (disabled.value || currentLocale?.value?.prefix === '/') return '/'
-  return currentLocale?.value?.prefix.slice(0, -1)
+  if (disabled.value) return '/'
+  return currentLocale?.value?.prefix
 })
 
 const menuPopperVisible = ref(false)
@@ -34,14 +34,14 @@ const menuPopperVisible = ref(false)
     <div class="px-3 hidden sm:flex justify-end items-center gap-4">
       <NuxtLink
         v-if="themeConfig?.nav?.timeline"
-        :to="`${currentLocale?.prefix}timeline`"
+        :to="`${currentLocale?.prefix}/timeline`"
         class="interact-btn text-xl no-underline"
         >时间线</NuxtLink
       >
-      <NuxtLink v-if="themeConfig?.nav?.tag" :to="`${currentLocale?.prefix}tag`" class="interact-btn text-xl no-underline"
+      <NuxtLink v-if="themeConfig?.nav?.tag" :to="`${currentLocale?.prefix}/tag`" class="interact-btn text-xl no-underline"
         >标签</NuxtLink
       >
-      <NuxtLink v-if="themeConfig?.nav?.extra" :to="`${currentLocale?.prefix}extra`" class="interact-btn text-xl no-underline"
+      <NuxtLink v-if="themeConfig?.nav?.extra" :to="`${currentLocale?.prefix}/extra`" class="interact-btn text-xl no-underline"
         >其他</NuxtLink
       >
       <ClientOnly>
