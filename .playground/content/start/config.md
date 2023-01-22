@@ -4,9 +4,9 @@ tags:
 ---
 
 
-# 主题配置
+# Theme Configuration
 
-在项目根目录下的 **nuxt.config.ts** 文件中设置字段如下：
+set the fields in the **nuxt.config.ts** file in the project root directory as follows：
 
 ```ts
 export default defineNuxtConfig({
@@ -16,7 +16,7 @@ export default defineNuxtConfig({
 })
 ```
 
-然后在项目根目录下的 **app.config.ts** 文件中配置主题设置，如本站点配置：
+then configure the theme settings in the **app.config.ts** file in the project root directory, such as this site configuration：
 
 ```ts
 export default defineAppConfig({
@@ -30,6 +30,7 @@ export default defineAppConfig({
       extra: true,
       icon: {
         skin: true,
+        i18n: false,
         github: {
           disabled: false,
           url: 'https://github.com/liting-yes/nuxt-theme-liting.git',
@@ -48,110 +49,78 @@ export default defineAppConfig({
             text: '主题配置',
             path: '/start/config',
           },
-          {
-            text: '文本编辑',
-            path: '/start/md',
-          },
+        ],
+      },
+      {
+        text: '部署',
+        items: [
           {
             text: 'Git使用指南',
-            path: '/start/git',
+            path: '/deploy/git',
           },
           {
-            text: '站点部署指南',
-            path: '/start/deploy',
+            text: 'Netfify部署指南',
+            path: '/deploy/netlify',
           },
         ],
       },
     ],
-    lastUpdateTime: {
-      text: '最近更新时间',
-      format: 'yyyy-MM-dd hh:mm',
-    },
-    locales: [
-      {
-        lang: 'en-US',
-        prefix: '/en-US',
-        text: 'English',
-      },
-      {
-        lang: 'zh-CN',
-        prefix: '/zh-CN',
-        text: '简体中文',
-      },
-    ],
+    lastUpdateTime: '最近更新时间',
   },
 })
 ```
 
-> 若以上文件不存在，需自行创建
+> If the above file does not exist, you need to create it yourself
 
 ## `title: string`
 
-title 字段设置的是站点的标题
+the **title** field sets the title of the site
 
 ## `description: string`
 
-description 字段设置的是站点的简要描述
+the **description** field sets a brief description of the site
 
 ## `search: boolean`
 
-search 字段代表是否启用全局搜索框
+the **search** field represents whether to enable the global search box
 
 ## `nav: Partial<ThemeConfigNav>`
 
-nav 字段设置的是顶部导航栏功能
+the **nav** field sets the function of the top navigation bar
 
 ```ts
 interface ThemeConfigNav {
-  timeline: boolean // 文章发布历史记录
-  tag: boolean // 按照标签分类文章
-  extra: boolean // 站外网站推荐
-  icon: {  // 快速图标跳转
-    skin?: boolean  // 切换颜色主题
-    github?: ThemeConfigNavIconGithub | string | boolean  // GitHub 仓库链接
+  timeline: boolean  // article publishing history
+  tag: boolean  // sort articles by tags
+  extra: boolean  // off-site website recommendation
+  icon: {  // shortcut icon jump
+    skin?: boolean  // mode switch
+    i18n?: boolean  // switch site language 
+    github?: ThemeConfigNavIconGithub | string | boolean  // GitHub repository link
   }
 }
 ```
 
 ## `sidebar: Sidebar[]`
 
-sidebar 字段设置的是文档页面左侧目录
+the **sidebar** field is set to the directory on the left side of the document page
 
 ```ts
 interface Sidebar {
-  key?: number | string // 唯一标识ID
-  text: string // 一级目录标题
-  items: SidebarItem[] // 一级目录的子目录数组
+  key?: number | string // unique ID
+  text: string // first-level directory title
+  items: SidebarItem[] // an array of subdirectories of the first-level directory
 }
 ```
 
 ```ts
 interface SidebarItem {
-  key?: number | string // 唯一标识ID
-  text: string // 二级目录标题
-  path: string // 二级目录标题对应的文档路径
+  key?: number | string // unique ID
+  text: string // second level directory title
+  path: string // the document path corresponding to the title of the secondary directory
 }
 ```
 
-## `lastUpdateTime: LastUpdateTime`
+## `lastUpdateTime: string | boolean`
 
-lastUpdateTime 字段指的是是否显示文档最近更新时间以及时间显示格式
-
-```ts
-interface LastUpdateTime {
-  text: string // 最近文档最新时间的前缀文本
-  format: string // 时间格式化格式
-}
-```
-
-## `locales:  false | LocaleItem[]`
-
-locales 字段设置的是站点的文档国际化结构
-
-```ts
-interface LocaleItem {
-  lang: string // 站点语言
-  prefix: string // 路径前缀
-  text: string // 导航栏国际化切换文本
-}
-```
+the **lastUpdateTime** field refers to whether to display the latest update time of the document and the display text

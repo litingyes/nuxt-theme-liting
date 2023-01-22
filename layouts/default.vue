@@ -2,11 +2,11 @@
  * @Date: 2023-01-02 08:59:25
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-20 17:05:30
+ * @LastEditTime: 2023-01-22 12:54:12
  * @FilePath: /nuxt-theme-liting/layouts/default.vue
 -->
 <script lang="ts" setup>
-const themeConfig = useThemeConfig()
+const { themeConfig } = useThemeConfig()
 
 const { page } = useContent()
 const sidebar = page.value?.sidebar ?? true
@@ -40,7 +40,7 @@ onClickOutside(tocRef, () => {
           <div class="default-layout__content mx-0 sm:mx-50 p-4">
             <ContentRenderer :value="doc" />
             <div class="my-4 flex justify-end">
-              <div v-if="themeConfig.lastUpdateTime && page.unixCommitter"
+              <div v-if="themeConfig?.lastUpdateTime && page.unixCommitter"
                 >{{ themeConfig.lastUpdateTime.text }} :
                 {{ format(page.unixCommitter * 1000, themeConfig.lastUpdateTime.format as string) }}</div
               >

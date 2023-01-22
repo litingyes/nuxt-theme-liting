@@ -2,7 +2,11 @@
  * @Date: 2023-01-03 00:33:34
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-20 13:26:16
+<<<<<<< HEAD
+ * @LastEditTime: 2023-01-22 19:51:55
+=======
+ * @LastEditTime: 2023-01-22 10:50:57
+>>>>>>> i18n
  * @FilePath: /nuxt-theme-liting/theme.d.ts
  */
 import { ParsedContent } from '@nuxt/content/dist/runtime/types'
@@ -44,14 +48,21 @@ declare namespace Theme {
     format: string
   }
 
+  interface LocaleItem {
+    lang: string
+    prefix: string
+    text: string
+  }
+
   interface Config {
     title: string
     description: string
     logo: string
     search: boolean
     nav: Partial<Nav>
-    sidebar: Sidebar[]
+    sidebar: Sidebar[] | Record<string, Sidebar[]>
     lastUpdateTime: Partial<LastUpdateTime> | false
+    locales: false | LocaleItem[]
   }
 
   interface PageInfo extends Pick<ParsedContent, string> {

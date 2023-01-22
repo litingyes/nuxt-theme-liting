@@ -2,12 +2,17 @@
  * @Date: 2022-12-31 17:11:30
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-20 13:24:59
+ * @LastEditTime: 2023-01-22 18:20:49
  * @FilePath: /nuxt-theme-liting/components/liting/Header.vue
 -->
 <script lang="ts" setup>
-const themeConfig = useThemeConfig()
+const { themeConfig } = useThemeConfig()
 const colorMode = useColorMode()
+
+const { setLang, currentLocale } = useLocale()
+const handleClickLocale = (lang: string) => {
+  setLang && setLang(lang)
+}
 
 const menuPopperVisible = ref(false)
 </script>
@@ -16,17 +21,48 @@ const menuPopperVisible = ref(false)
   <header
     class="liting-header fixed z-10 w-screen h-16 drop-shadow-2xl flex justify-between items-center px-3 backdrop-blur bg-yellow-100/50 dark:bg-slate-800"
   >
-    <NuxtLink to="/" class="interact-btn no-underline font-bold text-2xl flex items-center gap-1">
+    <NuxtLink :to="currentLocale?.prefix" class="interact-btn no-underline font-bold text-2xl flex items-center gap-1">
       <ClientOnly>
-        <img v-if="themeConfig.logo" class="w-8 h-8 sm:w-12 sm:h-12" src="../../public/logo.png" alt="logo" />
+        <img v-if="themeConfig?.logo" class="w-8 h-8 sm:w-12 sm:h-12" src="../../public/logo.png" alt="logo" />
       </ClientOnly>
-      <span v-if="themeConfig.title" class="hidden sm:block">{{ themeConfig.title }}</span>
+      <span v-if="themeConfig?.title" class="hidden sm:block">{{ themeConfig.title }}</span>
     </NuxtLink>
     <div class="px-3 hidden sm:flex justify-end items-center gap-4">
-      <NuxtLink v-if="themeConfig.nav?.timeline" to="/timeline" class="interact-btn text-xl no-underline">时间线</NuxtLink>
-      <NuxtLink v-if="themeConfig.nav?.tag" to="/tag" class="interact-btn text-xl no-underline">标签</NuxtLink>
-      <NuxtLink v-if="themeConfig.nav?.extra" to="/extra" class="interact-btn text-xl no-underline">其他</NuxtLink>
-      <template v-if="themeConfig.nav?.icon?.skin">
+      <NuxtLink
+        v-if="themeConfig?.nav?.timeline"
+        :to="`${currentLocale?.prefix}timeline`"
+        class="interact-btn text-xl no-underline"
+        >时间线</NuxtLink
+      >
+      <NuxtLink v-if="themeConfig?.nav?.tag" :to="`${currentLocale?.prefix}tag`" class="interact-btn text-xl no-underline"
+        >标签</NuxtLink
+      >
+      <NuxtLink v-if="themeConfig?.nav?.extra" :to="`${currentLocale?.prefix}extra`" class="interact-btn text-xl no-underline"
+        >其他</NuxtLink
+      >
+      <ClientOnly>
+        <ElDropdown
+          v-if="themeConfig?.locales"
+          size="small"
+          trigger="click"
+          popper-class="liting-header__popper"
+          @command="handleClickLocale"
+        >
+          <div class="i-ion:language-outline text-[var(--text-color)] interact-btn text-2xl" />
+          <template #dropdown>
+            <ElDropdownMenu>
+              <ElDropdownItem
+                v-for="locale in themeConfig.locales"
+                :key="locale.prefix"
+                class="!text-[var(--text-color)] interact-btn text-sm"
+                :command="locale.lang"
+                >{{ locale.text }}</ElDropdownItem
+              >
+            </ElDropdownMenu>
+          </template>
+        </ElDropdown>
+      </ClientOnly>
+      <template v-if="themeConfig?.nav?.icon?.skin">
         <div
           v-show="colorMode.preference === 'system'"
           class="i-material-symbols:desktop-windows-outline interact-btn text-2xl"
@@ -44,8 +80,8 @@ const menuPopperVisible = ref(false)
         />
       </template>
       <NuxtLink
-        v-if="!(themeConfig.nav?.icon?.github as Theme.NavIconGithub).disabled"
-        :to="(themeConfig.nav?.icon?.github as Theme.NavIconGithub).url"
+        v-if="!(themeConfig?.nav?.icon?.github as Theme.NavIconGithub).disabled"
+        :to="(themeConfig?.nav?.icon?.github as Theme.NavIconGithub).url"
         target="_blank"
       >
         <div class="i-iconoir:github interact-btn text-2xl" />
@@ -65,20 +101,42 @@ const menuPopperVisible = ref(false)
           ></div>
           <template #dropdown>
             <el-dropdown-menu>
-              <el-dropdown-item v-if="themeConfig.nav?.timeline">
-                <NuxtLink to="/timeline" class="interact-btn text-sm no-underline">时间线</NuxtLink>
+              <el-dropdown-item v-if="themeConfig?.nav?.timeline">
+                <NuxtLink :to="`${currentLocale?.prefix}timeline`" class="interact-btn text-sm no-underline">时间线</NuxtLink>
               </el-dropdown-item>
-              <el-dropdown-item v-if="themeConfig.nav?.tag">
-                <NuxtLink to="/tag" class="interact-btn text-sm no-underline">标签</NuxtLink>
+              <el-dropdown-item v-if="themeConfig?.nav?.tag">
+                <NuxtLink :to="`${currentLocale?.prefix}tag`" class="interact-btn text-sm no-underline">标签</NuxtLink>
               </el-dropdown-item>
-              <el-dropdown-item v-if="themeConfig.nav?.extra">
-                <NuxtLink to="/extra" class="interact-btn text-sm no-underline">其他</NuxtLink>
+              <el-dropdown-item v-if="themeConfig?.nav?.extra">
+                <NuxtLink :to="`${currentLocale?.prefix}extra`" class="interact-btn text-sm no-underline">其他</NuxtLink>
               </el-dropdown-item>
             </el-dropdown-menu>
           </template>
         </ElDropdown>
       </ClientOnly>
-      <template v-if="themeConfig.nav?.icon?.skin">
+      <ClientOnly>
+        <ElDropdown
+          v-if="themeConfig?.locales"
+          size="small"
+          trigger="click"
+          popper-class="liting-header__popper"
+          @command="handleClickLocale"
+        >
+          <div class="i-ion:language-outline text-[var(--text-color)] interact-btn text-2xl" />
+          <template #dropdown>
+            <ElDropdownMenu>
+              <ElDropdownItem
+                v-for="locale in themeConfig.locales"
+                :key="locale.prefix"
+                class="!text-[var(--text-color)] interact-btn text-sm"
+                :command="locale.lang"
+                >{{ locale.text }}</ElDropdownItem
+              >
+            </ElDropdownMenu>
+          </template>
+        </ElDropdown>
+      </ClientOnly>
+      <template v-if="themeConfig?.nav?.icon?.skin">
         <div
           v-show="colorMode.preference === 'system'"
           class="i-material-symbols:desktop-windows-outline interact-btn text-2xl"
@@ -96,8 +154,8 @@ const menuPopperVisible = ref(false)
         />
       </template>
       <NuxtLink
-        v-if="!(themeConfig.nav?.icon?.github as Theme.NavIconGithub).disabled"
-        :to="(themeConfig.nav?.icon?.github as Theme.NavIconGithub).url"
+        v-if="!(themeConfig?.nav?.icon?.github as Theme.NavIconGithub).disabled"
+        :to="(themeConfig?.nav?.icon?.github as Theme.NavIconGithub).url"
         target="_blank"
       >
         <div class="i-iconoir:github interact-btn text-2xl" />

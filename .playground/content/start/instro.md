@@ -1,22 +1,23 @@
 --- 
-title: 介绍
+title: instroduction
 sidebar: true
 toc: true
 ---
 
-# 主题介绍
-> 这是一个基于 [Nuxt3](https://nuxt.com/) 的文档主题
+# Introduction
 
-## 基本信息
+> This is a [Nuxt3](https://nuxt.com) based documentation theme
 
-- 主题名称：Liting
-- 开发目标：一个个性化的可配置的选择丰富的博客主题/组件库文档主题
+## Basic Information
+
+- Theme Name：Liting
+- Development Goal：a personalized configurable choice rich blog theme / component library documentation theme
 
 
-## 现支持功能
+## Now Supports Functions
 
-- 主页定制化样式
-- 日间/夜间模式切换
-- 文档目录/内容目录
-- 响应式设计
-- 国际化
+- home page customization style
+- day/night mode switch
+- document directory/content directory
+- responsive design
+- internationalization

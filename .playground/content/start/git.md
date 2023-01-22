@@ -5,32 +5,32 @@ tags:
 
 # Git
 
-**Git** 是每一名程序员的必修技能，是基础中的基础。掌握基本的Git使用是使用本主题的前提条件。在此先附上Git的官方文档：https://git-scm.com/book/zh/v2
+ It is a compulsory skill for every programmer and the foundation of the foundation. Mastering basic Git usage is a prerequisite for using this topic. Attach the official documentation of Git first：https://git-scm.com/book/zh/v2
 
-## 介绍
+## Introduction
 
-在程序员进化的早期，所有程序员都是在自己本地编写并且保存代码，而当项目越来越大，工作量远超个人极限的时候，协同合作、共同编辑势在必行。那么，在协同编辑的趋势下，当所有程序员都将代码储存到同一个仓库、同一个文件夹之中时，版本管理非做不可，代码的传递、保存和更新功能非做不可。Git由此而生，它是协同编辑的一大利器。当然，在本主题中更加侧重的是Git便捷的版本管理和代码同步。
+In the early days of programmer evolution, all programmers wrote and saved code locally, and when the project became larger and the workload far exceeded personal limits, it was imperative to collaborate and edit together. Then, under the trend of collaborative editing, when all programmers store the code in the same warehouse and the same folder, version management must be done, and the code transfer, save and update functions must be done. Git was born from this, and it is a great tool for collaborative editing. Of course, more emphasis is placed on Git's convenient version management and code synchronization in this topic.
 
-## Git安装
+## Git Install
 
-[Git官网下载地址](https://git-scm.com/downloads)
+[Git official website download address](https://git-scm.com/downloads)
 
 ## `git init`
 
-Git 仓库初始化
+repository initialization
 
 ## `git remote add <name> <url>`
 
-Git本地仓库和远程仓库建立联系
+establishing a connection between the local repository and the remote repository
 
 ## `git add .`
 
-添加所有修改的文件到缓存区
+add all modified files to staged
 
 ## `git commit -m "<text>"`
 
-保存本次修改并添加修改备注
+save this modification and add a modification note
 
 ## `git push <name> <branch>`
 
-推送本地仓库当前分支到远程仓库指定分支
+push the current branch of the local repository to the specified branch of the remote repository

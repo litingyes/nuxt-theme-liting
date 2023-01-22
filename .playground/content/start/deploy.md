@@ -3,10 +3,10 @@ tags:
   - tutorial
 ---
 
-# 部署
+# Deploy
 
-## Netlify 自动部署
+## Netlify Auto Deploy
 
 [官网][https://www.netlify.com]
 
-在注册账号登陆成功后，自行选择仓库导入……
+after the registered account is successfully logged in, choose the repository to import by yourself……
