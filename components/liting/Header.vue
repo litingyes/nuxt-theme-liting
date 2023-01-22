@@ -2,7 +2,7 @@
  * @Date: 2022-12-31 17:11:30
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-22 23:07:07
+ * @LastEditTime: 2023-01-22 23:29:40
  * @FilePath: /nuxt-theme-liting/components/liting/Header.vue
 -->
 <script lang="ts" setup>
@@ -14,7 +14,7 @@ const handleClickLocale = (lang: string) => {
   setLang && setLang(lang)
 }
 const homePath = computed(() => {
-  if (disabled.value) return '/'
+  if (disabled.value || currentLocale?.value?.prefix === '') return '/'
   return currentLocale?.value?.prefix
 })
 
@@ -57,7 +57,7 @@ const menuPopperVisible = ref(false)
             <ElDropdownMenu>
               <ElDropdownItem
                 v-for="locale in themeConfig.locales"
-                :key="locale.prefix"
+                :key="locale.lang"
                 class="!text-[var(--text-color)] interact-btn text-sm"
                 :command="locale.lang"
                 >{{ locale.text }}</ElDropdownItem
@@ -106,13 +106,13 @@ const menuPopperVisible = ref(false)
           <template #dropdown>
             <el-dropdown-menu>
               <el-dropdown-item v-if="themeConfig?.nav?.timeline">
-                <NuxtLink :to="`${currentLocale?.prefix}timeline`" class="interact-btn text-sm no-underline">时间线</NuxtLink>
+                <NuxtLink :to="`${currentLocale?.prefix}/timeline`" class="interact-btn text-sm no-underline">时间线</NuxtLink>
               </el-dropdown-item>
               <el-dropdown-item v-if="themeConfig?.nav?.tag">
-                <NuxtLink :to="`${currentLocale?.prefix}tag`" class="interact-btn text-sm no-underline">标签</NuxtLink>
+                <NuxtLink :to="`${currentLocale?.prefix}/tag`" class="interact-btn text-sm no-underline">标签</NuxtLink>
               </el-dropdown-item>
               <el-dropdown-item v-if="themeConfig?.nav?.extra">
-                <NuxtLink :to="`${currentLocale?.prefix}extra`" class="interact-btn text-sm no-underline">其他</NuxtLink>
+                <NuxtLink :to="`${currentLocale?.prefix}/extra`" class="interact-btn text-sm no-underline">其他</NuxtLink>
               </el-dropdown-item>
             </el-dropdown-menu>
           </template>
@@ -131,7 +131,7 @@ const menuPopperVisible = ref(false)
             <ElDropdownMenu>
               <ElDropdownItem
                 v-for="locale in themeConfig.locales"
-                :key="locale.prefix"
+                :key="locale.lang"
                 class="!text-[var(--text-color)] interact-btn text-sm"
                 :command="locale.lang"
                 >{{ locale.text }}</ElDropdownItem
