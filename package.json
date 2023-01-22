@@ -1,7 +1,7 @@
 {
   "name": "nuxt-theme-liting",
   "type": "module",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "private": false,
   "description": "a theme about nuxt",
   "author": "liting-yes <luz.liting@gmail.com>",

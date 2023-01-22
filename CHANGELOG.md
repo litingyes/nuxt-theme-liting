@@ -1,5 +1,24 @@
 # Changelog
 
+## [0.3.4](https://github.com/liting-yes/nuxt-theme-liting/compare/0.3.3...0.3.4) (2023-01-22)
+
+### Features
+
+- **i18n:** support i18n for nav
+  ([2d7f35d](https://github.com/liting-yes/nuxt-theme-liting/commit/2d7f35d64e4a2f52fc6fac498b85a964d5fb210c))
+
+### Bug Fixes
+
+- **header:** prefix ''
+  ([f9b3e13](https://github.com/liting-yes/nuxt-theme-liting/commit/f9b3e13f19b3ecc7156a8fd9682efeac24c556a0))
+- **i18n:** /zh-cn page
+  ([fbe9d0c](https://github.com/liting-yes/nuxt-theme-liting/commit/fbe9d0cc138e243e9620976a424c4a343a5e692e))
+- merge i18n ([aa8b85a](https://github.com/liting-yes/nuxt-theme-liting/commit/aa8b85a13ecdc57d099a33b1f6dce97c188ce543))
+- **useLocale:** default prefix
+  ([1dda1e5](https://github.com/liting-yes/nuxt-theme-liting/commit/1dda1e5ea4269d2b70901b8a8399be6e0b874178))
+- **useLocale:** rm prefix about endsWith '/'
+  ([1df92db](https://github.com/liting-yes/nuxt-theme-liting/commit/1df92db9d6ab31ddea8ff786bcda836276f67a92))
+
 ## [0.3.3](https://github.com/liting-yes/nuxt-theme-liting/compare/0.3.2...0.3.3) (2023-01-20)
 
 ## [0.3.2](https://github.com/liting-yes/nuxt-theme-liting/compare/0.3.1...0.3.2) (2023-01-20)
