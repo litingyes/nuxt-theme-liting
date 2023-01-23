@@ -30,42 +30,94 @@ export default defineAppConfig({
       extra: true,
       icon: {
         skin: true,
-        i18n: false,
         github: {
           disabled: false,
           url: 'https://github.com/liting-yes/nuxt-theme-liting.git',
         },
       },
     },
-    sidebar: [
+    sidebar: {
+      '/': [
+        {
+          text: 'start',
+          items: [
+            {
+              text: 'instroduction',
+              path: '/start/instro',
+            },
+            {
+              text: 'config',
+              path: '/start/config',
+            },
+            {
+              text: 'edit',
+              path: '/start/md',
+            },
+            {
+              text: 'git',
+              path: '/start/git',
+            },
+            {
+              text: 'deploy',
+              path: '/start/deploy',
+            },
+          ],
+        },
+      ],
+      '/zh-cn': [
+        {
+          text: '开始',
+          items: [
+            {
+              text: '主题介绍',
+              path: '/zh-cn/start/instro',
+            },
+            {
+              text: '主题配置',
+              path: '/zh-cn/start/config',
+            },
+            {
+              text: '文本编辑',
+              path: '/zh-cn/start/md',
+            },
+            {
+              text: 'Git使用指南',
+              path: '/zh-cn/start/git',
+            },
+            {
+              text: '站点部署指南',
+              path: '/zh-cn/start/deploy',
+            },
+          ],
+        },
+      ],
+    },
+    lastUpdateTime: {
+      text: '最近更新时间',
+      format: 'yyyy-MM-dd hh:mm',
+    },
+    locales: [
       {
-        text: '开始',
-        items: [
-          {
-            text: '主题介绍',
-            path: '/start/instro',
-          },
-          {
-            text: '主题配置',
-            path: '/start/config',
-          },
-        ],
+        lang: 'en-US',
+        prefix: '/',
+        text: 'English',
+        nav: {
+          timeline: 'TimeLine',
+          tag: 'Tag',
+          extra: 'Extra',
+        },
       },
       {
-        text: '部署',
-        items: [
-          {
-            text: 'Git使用指南',
-            path: '/deploy/git',
-          },
-          {
-            text: 'Netfify部署指南',
-            path: '/deploy/netlify',
-          },
-        ],
+        lang: 'zh-CN',
+        prefix: '/zh-cn',
+        text: '简体中文',
+        nav: {
+          timeline: '时间线',
+          tag: '标签',
+          extra: '额外',
+        },
       },
     ],
-    lastUpdateTime: '最近更新时间',
   },
 })
 ```
@@ -82,7 +134,7 @@ the **description** field sets a brief description of the site
 
 ## `search: boolean`
 
-the **search** field represents whether to enable the global search box
+the **search** field represents whether to enable the global search box (In development)
 
 ## `nav: Partial<ThemeConfigNav>`
 
@@ -95,13 +147,12 @@ interface ThemeConfigNav {
   extra: boolean  // off-site website recommendation
   icon: {  // shortcut icon jump
     skin?: boolean  // mode switch
-    i18n?: boolean  // switch site language 
     github?: ThemeConfigNavIconGithub | string | boolean  // GitHub repository link
   }
 }
 ```
 
-## `sidebar: Sidebar[]`
+## `sidebar: Sidebar[] | Record<string, Sidebar[]>`
 
 the **sidebar** field is set to the directory on the left side of the document page
 
@@ -121,6 +172,49 @@ interface SidebarItem {
 }
 ```
 
+If the site is set in multiple languages, the sidebar can be configured as an object
+
 ## `lastUpdateTime: string | boolean`
 
 the **lastUpdateTime** field refers to whether to display the latest update time of the document and the display text
+
+```ts
+interface LastUpdateTime {
+  text: string // the text prefixed with the latest time of the most recent document
+  format: string // time format
+}
+```
+
+## `locales:  false | LocaleItem[]`
+
+the locales field sets the document internationalization structure of the site
+
+```ts
+interface LocaleItem {
+  lang: string // site language
+  prefix: string // path prefix
+  text: string // navigation bar internationalization switch text
+}
+```
+
+**It is worth noting that there are still limitations in multi-language support. If the dynamic routing is not actively configured, the generated static resources are missing. All dynamic routing needs to be exhausted in the `nitro` field of the `nuxt.config.ts` file, as follows:**
+
+```ts
+export default defineNuxtConfig({
+  nitro: {
+    prerender: {
+      routes: [
+        '/zh-cn',
+        '/zh-cn/timeline',
+        '/zh-cn/tag',
+        '/zh-cn/extra',
+        '/zh-cn/start/instro',
+        '/zh-cn/start/config',
+        '/zh-cn/start/md',
+        '/zh-cn/start/git',
+        '/zh-cn/start/deploy',
+      ],
+    },
+  },
+})
+```
