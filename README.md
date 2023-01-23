@@ -12,4 +12,4 @@ npm i nuxt-theme-liting
 
 ## warn
 
-- i18n of docs isn't recommended now for some problems on home-page unsolved
+- i18n of docs isn't recommended now for using inconveniently
