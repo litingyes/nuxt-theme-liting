@@ -2,7 +2,7 @@
  * @Date: 2023-01-04 20:12:47
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-22 19:23:27
+ * @LastEditTime: 2023-01-23 10:18:12
  * @FilePath: /nuxt-theme-liting/components/liting/Sidebar.vue
 -->
 <script lang="ts" setup>
@@ -19,7 +19,7 @@ const sidebar = computed(() => {
   if (disabled.value) {
     return themeConfig?.sidebar as Theme.Sidebar[]
   } else {
-    return (themeConfig?.sidebar as Record<string, Theme.Sidebar[]>)[currentLocale!.value!.prefix]
+    return (themeConfig?.sidebar as Record<string, Theme.Sidebar[]>)[currentLocale!.value!.prefix || '/']
   }
 })
 
