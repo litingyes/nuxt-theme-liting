@@ -13,3 +13,4 @@ npm i nuxt-theme-liting
 ## warn
 
 - i18n of docs isn't recommended now for using inconveniently
+- file time could be invalid, because of file path cann't get easy
