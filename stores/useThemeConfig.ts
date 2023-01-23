@@ -2,7 +2,7 @@
  * @Date: 2023-01-22 12:44:06
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-22 23:18:28
+ * @LastEditTime: 2023-01-23 10:26:07
  * @FilePath: /nuxt-theme-liting/stores/useThemeConfig.ts
  */
 import { defineStore } from 'pinia'
@@ -47,7 +47,13 @@ export const useThemeConfig = defineStore('themeConfig', () => {
 
     const { disabled } = useLocale()
 
-    if (disabled.value) {
+    if (
+      !themeConfig.value.sidebar ||
+      isArray(themeConfig.value.sidebar && (themeConfig.value.sidebar as Theme.Sidebar[]).length === 0) ||
+      (isPlainObject(themeConfig.value.sidebar) && Object.keys(themeConfig.value.sidebar).length === 0)
+    ) {
+      themeConfig.value.sidebar = false
+    } else if (disabled.value) {
       ;(themeConfig.value.sidebar as Theme.Sidebar[]).forEach((level1) => {
         if (!level1.key) level1.key = String(keyIndex++)
 

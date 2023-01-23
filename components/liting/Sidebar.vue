@@ -2,7 +2,7 @@
  * @Date: 2023-01-04 20:12:47
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-23 10:18:12
+ * @LastEditTime: 2023-01-23 10:32:39
  * @FilePath: /nuxt-theme-liting/components/liting/Sidebar.vue
 -->
 <script lang="ts" setup>
@@ -24,7 +24,7 @@ const sidebar = computed(() => {
 })
 
 const sidebarState = useSidebarState()
-if (themeConfig?.sidebar?.length && !sidebarState.expanding) {
+if (themeConfig?.sidebar && !sidebarState.expanding) {
   sidebarState.updateExpanding(sidebar.value[0].key)
 }
 const openSubMenu = (key: string) => {
