@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.4.0](https://github.com/liting-yes/nuxt-theme-liting/compare/0.3.4...0.4.0) (2023-01-23)
+
+### ⚠ BREAKING CHANGES
+
+- **i18n:** when deploy on netlify/vercel, i18n is valid, try fix now
+
+### Bug Fixes
+
+- **fileTime:** add defineNitroPlugin type
+  ([688f5d5](https://github.com/liting-yes/nuxt-theme-liting/commit/688f5d528c2071ce294f8f23bfa253f0fd4dff3b))
+- **i18n:** inactive sidebar when toggling lang
+  ([06e94a3](https://github.com/liting-yes/nuxt-theme-liting/commit/06e94a31912115a6017219db2f94851e1517e29c))
+- **i18n:** sidebar display with prefix equal ''
+  ([c5a61ec](https://github.com/liting-yes/nuxt-theme-liting/commit/c5a61ec86cf56a234b17218fc7777604f18508b3))
+- **Sidebar:** default active
+  ([b5da7ea](https://github.com/liting-yes/nuxt-theme-liting/commit/b5da7ea0ca0b9bc9781028290fcca51d7d00f355))
+
+- **i18n:** modify the method for add dynamic router
+  ([b123185](https://github.com/liting-yes/nuxt-theme-liting/commit/b1231856194d25d9b49365e3369ea92ac2c30f09))
+
 ## [0.3.4](https://github.com/liting-yes/nuxt-theme-liting/compare/0.3.3...0.3.4) (2023-01-22)
 
 ### Features
