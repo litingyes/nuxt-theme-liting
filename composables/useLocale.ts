@@ -2,7 +2,7 @@
  * @Date: 2023-01-16 23:38:45
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-22 23:21:23
+ * @LastEditTime: 2023-01-23 10:46:54
  * @FilePath: /nuxt-theme-liting/composables/useLocale.ts
  */
 export const useLocale = () => {
@@ -50,6 +50,9 @@ export const useLocale = () => {
     path = currentLocale.value?.prefix + path
 
     if (path === route.fullPath) return
+
+    const sidebarState = useSidebarState()
+    sidebarState.updateExpanding()
     navigateTo(path)
   }
 
