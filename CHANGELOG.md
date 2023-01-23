@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.4.1](https://github.com/liting-yes/nuxt-theme-liting/compare/0.4.0...0.4.1) (2023-01-23)
+
+### Bug Fixes
+
+- **fileTime:** defineNitroPlugin type error
+  ([027c4fd](https://github.com/liting-yes/nuxt-theme-liting/commit/027c4fdc2b171372298afcc0b2c9119700c27c73))
+- **PageList:** error when page.unixCommitter invalid
+  ([7e35da1](https://github.com/liting-yes/nuxt-theme-liting/commit/7e35da1d5f2492bc3902aa721bdb5b6249dfa139))
+
 ## [0.4.0](https://github.com/liting-yes/nuxt-theme-liting/compare/0.3.4...0.4.0) (2023-01-23)
 
 ### ⚠ BREAKING CHANGES
