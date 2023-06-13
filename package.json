@@ -62,7 +62,7 @@
     "@nuxtjs/google-fonts": "3.0.0-1",
     "@pinia/nuxt": "^0.4.6",
     "@unocss/nuxt": "^0.48.4",
-    "@vueuse/core": "^9.11.0",
+    "@vueuse/core": "^10.1.2",
     "@vueuse/nuxt": "^9.11.0",
     "animate.css": "^4.1.1",
     "date-fns": "^2.29.3",
